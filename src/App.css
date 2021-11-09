@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+*{
+    font-family:Canter;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+.App {
+   /* font-family: 'Cantarell', sans-serif;*/
+  
+   
+}
+.imgPortada {
+
+    background-image: url("img/logoSecundario.jpeg");
+
+    width: 100%;
+    height: 280px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    background-size: auto
+  }
+
+@font-face {
+    font-family: Canter;
+    font-weight: bold;
+    src: url("fonts/Agrandir-Bold.otf") format("opentype");
+}

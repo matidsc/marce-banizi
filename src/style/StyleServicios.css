@@ -1,0 +1,15 @@
+#pageWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:15vh;
+    background-color: black;
+    color: white; 
+    height: 100%;
+    z-index: -1;
+}
+.serviciosWrapper{
+   
+    width: 80%;
+}
+
