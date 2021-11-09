@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/matidsc.github.io/static/css/main.996efab0.chunk.css",
+    "main.js": "/matidsc.github.io/static/js/main.5ed625f6.chunk.js",
+    "main.js.map": "/matidsc.github.io/static/js/main.5ed625f6.chunk.js.map",
+    "runtime-main.js": "/matidsc.github.io/static/js/runtime-main.bab8470d.js",
+    "runtime-main.js.map": "/matidsc.github.io/static/js/runtime-main.bab8470d.js.map",
+    "static/js/2.945f2ef0.chunk.js": "/matidsc.github.io/static/js/2.945f2ef0.chunk.js",
+    "static/js/2.945f2ef0.chunk.js.map": "/matidsc.github.io/static/js/2.945f2ef0.chunk.js.map",
+    "static/js/3.f831c7c1.chunk.js": "/matidsc.github.io/static/js/3.f831c7c1.chunk.js",
+    "static/js/3.f831c7c1.chunk.js.map": "/matidsc.github.io/static/js/3.f831c7c1.chunk.js.map",
+    "index.html": "/matidsc.github.io/index.html",
+    "static/css/main.996efab0.chunk.css.map": "/matidsc.github.io/static/css/main.996efab0.chunk.css.map",
+    "static/js/2.945f2ef0.chunk.js.LICENSE.txt": "/matidsc.github.io/static/js/2.945f2ef0.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/matidsc.github.io/static/media/logoSecundario.90f9a57c.jpeg",
+    "static/media/S0101.2b34ac53.jpeg": "/matidsc.github.io/static/media/S0101.2b34ac53.jpeg",
+    "static/media/logoPrincipal.6b5cbb38.jpeg": "/matidsc.github.io/static/media/logoPrincipal.6b5cbb38.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bab8470d.js",
+    "static/js/2.945f2ef0.chunk.js",
+    "static/css/main.996efab0.chunk.css",
+    "static/js/main.5ed625f6.chunk.js"
+  ]
+}
