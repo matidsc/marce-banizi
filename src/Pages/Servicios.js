@@ -20,7 +20,7 @@ const Servicios=()=> {
                     
                     {info.state.subservicios.map((subservicio,index) => 
                         <Servicio key={index}
-                        servicio={subservicio.nombre}imagen={imagen} precio={subservicio.precio} descripcion={subservicio.descripcion} subservicios={[]}
+                        servicio={subservicio.nombre}imagen={subservicio.imagen} precio={subservicio.precio} descripcion={subservicio.descripcion} subservicios={[]}
                     />)}        
                     
                 </div>

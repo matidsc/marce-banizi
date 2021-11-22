@@ -8,14 +8,15 @@ import { AiOutlineWhatsApp } from "react-icons/ai";
  */
 const IndividualServicio = () => {
     const info = useLocation();
+    console.log(info.state.precio)
     return (
         <div className='wrapperIndividualServicio'>
             <div style ={ { backgroundImage: "url("+info.state.imagen+")" } }className='parallaxWrapper'></div>
             <div className='wrapperDetallesServicio'>
                 <h1>{info.state.nombre}</h1>
-                <h3>${info.state.precio}</h3>
-                <h2>¿En qué consiste? </h2>
-                <p>{info.state.descripcion}
+                {typeof info.state.precio !=="undefined" ? <h3>${info.state.precio}</h3>: null } 
+                <h2>En qué consiste? </h2>
+                <p>{separador(info.state.descripcion)}
                 <a href="#" className="showMore"> <span>(more…)</span> </a>
 
                 </p>
@@ -28,6 +29,11 @@ const IndividualServicio = () => {
         </div>
 
     )
+
+}
+function separador(descripcion) {
+
+    return descripcion.split('.').join("."+"\n");
 
 }
 export default IndividualServicio

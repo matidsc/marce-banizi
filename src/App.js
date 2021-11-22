@@ -2,7 +2,6 @@ import './App.css';
 import NavBar from './components/navBar';
 import React, { Fragment } from 'react';
 import logoSec from './img/logoSecundario.jpeg'
-import fonts from './fonts/fonts.css'
 import Footer from './components/footer'
 import Servicios from './Pages/Servicios'
 import Home from './Pages/Home'
@@ -36,7 +35,7 @@ export default App=>{
               <Route path="/subservicios" component={() => <Servicios/>} />
 
               <Route path='/productos' render={() => <Productos />} />
-              <Route path='/' exact component={Home}></Route>
+              <Route path='/marce-banizi' exact component={Home}></Route>
               <Footer />
 
             </Fragment>
