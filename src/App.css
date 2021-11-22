@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+    
+
 *{
-    font-family:Canter;
+    font-family: 'Gruppo', cursive;
+    font-weight: 700;
 }
 body{
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;    
 }
 
 .App {
-   /* font-family: 'Cantarell', sans-serif;*/
   
    
 }
@@ -23,12 +27,11 @@ body{
     height: 280px;
     background-attachment: fixed;
     background-repeat: no-repeat;
-
     background-size: auto
   }
 
-@font-face {
-    font-family: Canter;
+/*@font-face {
+    font-family: Gruppo;
     font-weight: bold;
     src: url("fonts/Agrandir-Bold.otf") format("opentype");
-}
+}*/

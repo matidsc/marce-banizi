@@ -1,6 +1,5 @@
 import React from 'react'
 import style from '../style/styleHome.css'
-import GoTo from '../components/goTo'
 import imgSec from '../img/logoSecundario.jpeg'
 import { useSelector } from 'react-redux';
 
@@ -15,7 +14,6 @@ const Home=()=>{
     return(
         
         <main className='HomeWrapper' id='pageWrapper'>
-            <img className='imgSec' src={imgSec}/>
         </main>
     )
 }
