@@ -8,6 +8,7 @@ import Home from './Pages/Home'
 import Productos from './Pages/Productos'
 import Servicio from './components/servicio';
 import ServicioIndividual from './components/individualServicio'
+import Portafolio from './Pages/Portafolio';
 import {
   BrowserRouter as Router,
   Switch,
@@ -34,9 +35,10 @@ export default App=>{
 
               <Route path="/subservicios" component={() => <Servicios/>} />
 
-              <Route path='/productos' render={() => <Productos />} />
-              <Route path='/marce-banizi' exact component={Home}></Route>
-              <Footer />
+              <Route path='/productos' component={() => <Productos />} />
+              <Route path='/marce-banizi' exact component={Home}/>
+              <Route path='/portafolio' component={()=><Portafolio/>}/>
+              <Footer/>
 
             </Fragment>
 

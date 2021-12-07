@@ -1,6 +1,5 @@
 import React from 'react'
 import style from '../style/styleHome.css'
-import imgSec from '../img/logoSecundario.jpeg'
 import { useSelector } from 'react-redux';
 
 /*const style={
@@ -14,6 +13,8 @@ const Home=()=>{
     return(
         
         <main className='HomeWrapper' id='pageWrapper'>
+            
+            <div className='imgHome' ></div>
         </main>
     )
 }

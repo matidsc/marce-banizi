@@ -6,6 +6,7 @@ export const Productos =()=>{
 
     return(
         <main id='pageWrapper'>
+            
         </main>
 
     )

@@ -14,21 +14,20 @@ const NavBar = () => {
 
     const dispatch = useDispatch()
 
-
     return (
 
         <>
             <nav style={varShow ? { borderRadius: '0' } : { borderRadius: '0 0 20px 20px' }} >
                 <HiMenuAlt2 size="40" className='hamburger' onClick={() => dispatch(showNavBar())} />
-                <img src={logo} className='logoNavBar'></img>
+                <img src={logo} className='logoNavBar'/>
                 <div className='navBarLinks' id={varShow ? 'show' : 'hidden'}>
-
+                    
                     <ul>
-                        <li><Link to='/marce-banizi' onClick={() => dispatch(showNavBar())}>Inicio</Link></li>
+                        <li onClick={() => dispatch(showNavBar())}><Link to='/marce-banizi' >Inicio</Link></li>
                         <li onClick={() => dispatch(showServices())}>Servicios</li>
                         <ul id={varShowServices ? 'subshow' : 'subhidden'}>
                             {ServiciosLista.map(servicio =>
-
+        
                                 <li key={servicio.id} onClick={() => { dispatch(showNavBar()) }}><Link to=
 
                                     {servicio.hasOwnProperty('Subservicios') ?
@@ -59,7 +58,7 @@ const NavBar = () => {
 
                             <ul id={varShowProductos ? 'subshow' : 'subhidden'}>
                                 <li>
-                                LIDHERMA 
+                                    LIDHERMA 
                                 </li>
                                 <li>
                                     EXEL
@@ -70,7 +69,10 @@ const NavBar = () => {
 
                             </ul>
                         </li>
-
+                      <li>
+                          <Link to='/portafolio'>Portafolio</Link>
+                                        
+                     </li>                      
                     </ul>
 
                 </div>

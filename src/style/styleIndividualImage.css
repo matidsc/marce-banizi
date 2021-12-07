@@ -1,0 +1,8 @@
+.imgMain{
+    width: 100%;
+    height: 85%;
+}
+.imgWrapper{
+    min-height: 80vh;
+    width: 100%;
+}
