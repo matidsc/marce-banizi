@@ -9,7 +9,7 @@ const Servicio = (props) => {
 return (
         <div className='divServicio'>
             <h1 className='titleServicio'>{props.servicio}</h1>
-            <img className='imgServicio' src={"../img/Servicios/"+"S0101.jpeg"} />
+            <img className='imgServicio' src={img} />
             
             <RoundedBtn width={"100%"} height={"53px"}text={'Más información'} color='black'
             linkTo={
