@@ -1,12 +1,56 @@
 .imgWrapper{
-    width: 100%;
-    height: 85%;
-    display: flex;
-    overflow: auto;
-    flex-direction: row;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top:15vh;
+
 }
 .imgMain{
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
+    width: 100vw;
+  height: auto;
+  border-radius: 10px;
 }
+.arrow{
+    color: white;
+    position: absolute;
+    top: 65vh;
+    z-index: 10;
+    height: 101%;
+    transform: translateY(-50%);
+    -webkit-tap-highlight-color: transparent;
+
+
+}
+.arrowR{
+    right:0px;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+    padding: 0 10px 0 30px ;
+
+    cursor: pointer;
+    user-select: none;
+}
+.arrowL{
+    background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+    padding-left: 10px;
+
+    opacity: 1;
+    left: 0px;
+    cursor: pointer;
+    user-select: none;
+    padding: 0 30px 0 10px ;
+}
+
+.slide {
+    opacity: 0;
+    transition-duration: 1s ease;
+  }
+  
+  .imgActiva {
+      width: 100%;
+      height: 100vh;
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+  }

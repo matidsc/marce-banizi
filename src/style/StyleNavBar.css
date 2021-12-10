@@ -3,6 +3,8 @@
     margin-left: 30px;
     cursor: pointer;
     color: white;
+    -webkit-tap-highlight-color: transparent;
+
 }
 nav{
     background-color: #000000;

@@ -12,6 +12,9 @@ export const RoundedBtn = (props) => {
         width:props.width,
         height:props.height,
         backgroundColor:props.backColor,
+        WebkitTapHighlightColor: "transparent"
+
+
     };        
 
     /*  1 PARA CONCATENAR:::::::: childContainer = { ...childContainer, backgroundColor: props.color }*/
