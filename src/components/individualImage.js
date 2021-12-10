@@ -4,22 +4,21 @@ import style from '../style/styleIndividualImage.css'
 
 const IndividualImage = (props) => {
 
-    const imagesPool = [
-        '0',
-        '1'
-    ]
-    imagesPool.map(function (img) {
+    const imageList = []
+    for (var i=0;i<27;i++){
+        imageList.push(""+i+"")
+    }
+    return (<div className='imgWrapper'>
 
-        console.log('LALAL' + img)
-
-        const image = ('../img/Portafolio/' + img + '.jpg');
-        console.log('ESTA ES LA RUTA:'+{image})
-        
-        return (<div>
-            <img src={require(`${image}`)}/>
-            </div>
-        )
-    })
+        {
+            imageList.map((img,index) => {
+                return <img key={index} className='imgMain' src={require("../img/Portafolio/" + img + ".jpg").default} />
+            })
+        }
+    </div>
+    )
+    /*<img src={require('../images/' + fileName + '.jpg')} />
+           <img src={require(`../images/${fileName}.jpg`)} />*/
 
     /* we put the image variable we made earlier into the src attribute */
 
