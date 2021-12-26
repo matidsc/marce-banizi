@@ -1,42 +1,79 @@
 .hamburger{
     display: none;
-    margin-left: 30px;
-    cursor: pointer;
+}
+.navBarLinks{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.navBarLinks a{
     color: white;
-    -webkit-tap-highlight-color: transparent;
-
+}
+.navBarLinks ul li{
+    list-style: none;
+    margin: 10px;
+    cursor: pointer;
 }
 nav{
-    background-color: #000000;
+    background-color: black;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 15vh;
     border-radius: 0 0 20px 20px;
     top: 0;
     position: fixed;
-    
-    
+    color: white;
+    justify-content: space-around;
 }
+
 .logoNavBar{
     
     width: 128px;
     height: inherit;
     margin-right: 30px;
-    position:absolute;
-    top:0;
-    left:50%;
-    transform: translateX(-50%);
+
     
 }
+.navBarLinks ul{
+    display: flex;
+    flex-direction: row;
+}
+#subshow{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    background-color: black;
+}
+#subhidden{
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
+    #subshow{
+        position: static;
+        align-items: baseline;
+        background-color: white;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        z-index: 1;
+        transition: all 3s;
+    }
+    #subhidden{
+        display: none;
+    }
+ 
     .hamburger{
         display: block;
+        margin-left: 30px;
+    cursor: pointer;
+    color: white;
+    -webkit-tap-highlight-color: transparent;
     }
     nav{
-        color: white;
         z-index: 1; 
+        align-items: center;
+        justify-content: space-between;
 
     }
    nav #show {
@@ -52,11 +89,12 @@ nav{
         border-bottom-right-radius: 20px;  
         color: black;
         display: flex;
-        z-index: 1;
+        z-index: 10;
    }
    .navBarLinks{
     transition: max-height 0.15s ease-out;
     overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
 
    }
     nav #hidden{
@@ -65,8 +103,11 @@ nav{
     .navBarLinks ul{
         list-style: none;
         padding: 0;
-        margin-left: 15px;
-
+        flex-direction: column;
+        width: 100%;
+        row-gap: 7px;
+        margin: 20px 0 20px 30px;
+    
     }
     .navBarLinks ul a{
         color: black;
@@ -77,24 +118,18 @@ nav{
         font-size:3vh;
         margin: 20px;
     }
-    #subshow{
-
-        flex-direction: column;
-        row-gap: 30px;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        z-index: 1;   
-
-    }
-    #subhidden{
-        display: none;
-    }
+  
     .blurryBack{
         opacity: 0.5;
         height: 100%;
         width: 100%;
         background-color: black;
         position: fixed;
+    }
+    .logoNavBar{
+        position:absolute;
+        top:0;
+        left:50%;
+        transform: translateX(-50%);
     }
 }

@@ -7,7 +7,7 @@ footer{
     display: flex;
     flex-direction: column;
     row-gap: 30px;
-   width: 100%;
+    width: 60%;
  
 }
 footer h2{
@@ -33,7 +33,16 @@ footer h2::after{
     align-items: center;
     padding-bottom: 20px;
 }
-
+@media screen and (max-width:500px) {
+    
+footer{
+    width: 100%;
+    
+}
+}
+@media screen and(max-width:768px){
+    
+}
 /*.footerWrapper{
     background-color: black;
     width: 100vw;
