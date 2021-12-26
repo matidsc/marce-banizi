@@ -7,6 +7,8 @@
 *{
     font-family: 'Gruppo', cursive;
     font-weight: 700;
+    box-sizing: border-box;
+    padding: 0;margin: 0;
 }
 body{
 
@@ -14,15 +16,15 @@ body{
     padding: 0;
     box-sizing: border-box;    
 }
+.App{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
 
-.App {
-  
-   
 }
 .imgPortada {
 
     background-image: url("img/logoSecundario.jpeg");
-
     width: 100%;
     height: 280px;
     background-attachment: fixed;
@@ -35,3 +37,10 @@ body{
     font-weight: bold;
     src: url("fonts/Agrandir-Bold.otf") format("opentype");
 }*/
+@media screen and(min-width:768px)  {
+    
+    .App{
+        display: flex;
+        justify-content: center ;
+    }
+}

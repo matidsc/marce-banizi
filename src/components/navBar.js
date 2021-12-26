@@ -17,14 +17,15 @@ const NavBar = () => {
     return (
 
         <>
-            <nav style={varShow ? { borderRadius: '0' } : { borderRadius: '0 0 20px 20px' }} >
+            <nav style={varShow ? {zIndex :"3", borderRadius: '0' } : { borderRadius: '0 0 20px 20px',zIndex :"3" }} >
                 <HiMenuAlt2 size="40" className='hamburger' onClick={() => dispatch(showNavBar())} />
                 <img src={logo} className='logoNavBar'/>
                 <div className='navBarLinks' id={varShow ? 'show' : 'hidden'}>
                     
                     <ul>
                         <li onClick={() => dispatch(showNavBar())}><Link to='/marce-banizi' >Inicio</Link></li>
-                        <li onClick={() => dispatch(showServices())}>Servicios</li>
+                        
+                        <div className='dropdown'><li onClick={() => dispatch(showServices())}>Servicios</li>
                         <ul id={varShowServices ? 'subshow' : 'subhidden'}>
                             {ServiciosLista.map(servicio =>
         
@@ -54,6 +55,7 @@ const NavBar = () => {
                                 >{servicio.Servicio}</Link></li>
                             )}
                         </ul>
+                        </div>
                         <li onClick={() => dispatch(showProductos())}>Productos
 
                             <ul id={varShowProductos ? 'subshow' : 'subhidden'}>

@@ -4,10 +4,25 @@ body{
 .imgHome{
     background-image: url(../img/imgHome.jpeg);
     background-attachment: fixed;
-    background-position: center;
+    background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 60vh;
-    width: 100%;
+    height: 90vh;
+    width: 60%;
+    margin-bottom: -20px;
+}
+@media screen and (max-width:768px){
+    
+    
+    .imgHome{
+        background-image: url(../img/imgHome.jpeg);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 60vh;
+        width: 100vw;
+    }
+ 
 }
 

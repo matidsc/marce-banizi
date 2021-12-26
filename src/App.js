@@ -1,4 +1,4 @@
-import './App.css';
+import style from '../src/App.css'
 import NavBar from './components/navBar';
 import React, { Fragment } from 'react';
 import logoSec from './img/logoSecundario.jpeg'
@@ -16,7 +16,7 @@ import {
 } from "react-router-dom";
 import IndividualServicio from './components/individualServicio';
 
-export default App=>{
+const App=()=>{
 
   /* <Servicio title='Maquillaje profesional' subtitles={['Maquillaje Social', 'Novias', '15 años',]} descriptions={['Si sos invitada o tenés un evento','','']}/>(*/
   /*             <Route path='/servicios' render={(props) => <Servicios {...props} title={`Props through render`}} ></Route>
@@ -50,4 +50,4 @@ export default App=>{
   
 
 }
-
+export default App

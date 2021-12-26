@@ -14,7 +14,7 @@ const Servicios=()=> {
 
         return (
             
-            <main id='pageWrapper'>  
+            <main id='pageWrapper'>
                 <div className='serviciosWrapper'>
                     <MainTitle title={info.state.servicio}/>
                     
