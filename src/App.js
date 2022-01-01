@@ -16,38 +16,37 @@ import {
 } from "react-router-dom";
 import IndividualServicio from './components/individualServicio';
 
-const App=()=>{
+const App = () => {
 
   /* <Servicio title='Maquillaje profesional' subtitles={['Maquillaje Social', 'Novias', '15 años',]} descriptions={['Si sos invitada o tenés un evento','','']}/>(*/
   /*             <Route path='/servicios' render={(props) => <Servicios {...props} title={`Props through render`}} ></Route>
   */
 
 
-    return (
-      <Router>
-        <NavBar/>
-        <div className='App'>
+  return (
+    <Router>
+      <NavBar />
+      <div className='App'>
 
-          <Switch>
+        <Switch>
           <Route path="/servicio" component={() => <IndividualServicio />} />
-        
-            <Fragment>
 
-              <Route path="/subservicios" component={() => <Servicios/>} />
+          <Fragment>
 
-              <Route path='/productos' component={() => <Productos />} />
-              <Route path='/marce-banizi' exact component={Home}/>
-              <Route path='/portafolio' component={()=><Portafolio/>}/>
-              <Footer/>
+            <Route path="/subservicios" component={() => <Servicios />} />
+            <Route path='/productos' component={() => <Productos />} />
+            <Route path='/' exact component={Home} />
+            <Route path='/portafolio' component={() => <Portafolio />} />
+            <Footer />
 
-            </Fragment>
+          </Fragment>
 
-          </Switch>
-        </div>
-      </Router>
-    )
+        </Switch>
+      </div>
+    </Router>
+  )
 
-  
+
 
 }
 export default App

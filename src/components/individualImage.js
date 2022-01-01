@@ -18,15 +18,10 @@ const IndividualImage = (props) => {
         setActual(actual === length - 1 ? 0 : actual + 1)
     }
     const prevImg = () => {
-        setActual(actual === 0 ? length -= 1 : actual - 1)
+        setActual(actual === 0 ? length - 1 : actual - 1)
     }
     console.log(actual)
-    const defaultImage =(event)=>{
 
-    console.log('TRIIGEREDDD')
-        event.target.src= '../img/logoPrincipal.jpeg'
-        
-    }
     return (
         <div className='imgWrapper'>
             <IoIosArrowDropleftCircle  className='arrow arrowL' size="40" onClick={prevImg} />
@@ -38,7 +33,7 @@ const IndividualImage = (props) => {
                     return (
                         <div key={index} className={index === actual ? 'imgActiva' : 'slide'}>
                             
-                            {index === actual && <img key={index} onError={defaultImage} className='imgMain' src={require("../img/Portafolio/" + img + ".jpg").default} />
+                            {index === actual && <img key={index} className='imgMain' src={require("../img/Portafolio/" + img + ".jpg").default} />
                             }
                         </div>
                         

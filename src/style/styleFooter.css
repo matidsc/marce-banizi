@@ -8,7 +8,9 @@ footer{
     flex-direction: column;
     row-gap: 30px;
     width: 60%;
- 
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 footer h2{
     margin: 0;
@@ -19,7 +21,7 @@ footer h2::after{
 
     display: block; 
     content: '';
-    width: 15%;
+    width: 50px;
     height: 10px;
     background-color: #ff1616;
     margin-top: 10px;
@@ -41,6 +43,7 @@ footer{
 }
 }
 @media screen and(max-width:768px){
+    
     
 }
 /*.footerWrapper{

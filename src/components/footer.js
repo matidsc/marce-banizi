@@ -13,7 +13,7 @@ const Footer = () => {
 
     return (
         
-        <footer >
+        <footer id='contacto'>
             <h2>Contacto</h2>
             <div className='footerWrapper'>
                 <AiOutlineWhatsApp size="40" className='iconFooter' />

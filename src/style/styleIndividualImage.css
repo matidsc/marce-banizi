@@ -2,10 +2,6 @@
   box-sizing: border-box;
 
 }
-@media screen and (min-width:768px) {
-  
-  
-}
 .imgWrapper{
   height: 80vh;
   display: flex;
@@ -62,3 +58,20 @@
     opacity: 1;
     transition-duration: 1s;
   }
+  @media screen and (min-width:768px) {
+    
+    .imgWrapper{
+      width: 20vw;
+
+    }
+    .imgMain{
+      width: auto; 
+    }
+    .arrowL{
+      margin-left: 15vw;
+    }
+    .arrowR{
+      margin-right: 15vw;
+    }
+
+}
