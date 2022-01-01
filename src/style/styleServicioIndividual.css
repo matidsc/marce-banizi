@@ -1,9 +1,8 @@
 .wrapperIndividualServicio{
-    color:white;
+    color: white;
     
 }   
 .parallaxWrapper{
-    
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,10 +16,10 @@
     background-color: white;
     color: black;
     border-radius: 20px 20px 0 0;
-  
-   padding: 30px;
-   margin-top: -15px;
-   white-space: pre-line;
+    margin-bottom: 65px;
+    padding: 30px;
+    margin-top: -15px;
+    white-space: pre-line;
 
 }
 .wrapperIndividualServicio p{

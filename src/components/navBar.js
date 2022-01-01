@@ -13,54 +13,56 @@ const NavBar = () => {
     const { varShow, varShowProductos, varShowServices } = useSelector((state) => state.navState)
 
     const dispatch = useDispatch()
-
+    console.log('SERVICIOS: '+varShowServices)    
+    console.log('PRODUCTOS: '+varShowProductos)
+   
     return (
 
         <>
-            <nav style={varShow ? {zIndex :"3", borderRadius: '0' } : { borderRadius: '0 0 20px 20px',zIndex :"3" }} >
+            <nav style={varShow ? { zIndex: "3", borderRadius: '0' } : { borderRadius: '0 0 20px 20px', zIndex: "3" }} >
                 <HiMenuAlt2 size="40" className='hamburger' onClick={() => dispatch(showNavBar())} />
-                <img src={logo} className='logoNavBar'/>
+                <img src={logo} className='logoNavBar' />
                 <div className='navBarLinks' id={varShow ? 'show' : 'hidden'}>
-                    
+
                     <ul>
-                        <li onClick={() => dispatch(showNavBar())}><Link to='/marce-banizi' >Inicio</Link></li>
-                        
+                        <li onClick={() => dispatch(showNavBar())}><Link to='/' >Inicio</Link></li>
+
                         <div className='dropdown'><li onClick={() => dispatch(showServices())}>Servicios</li>
-                        <ul id={varShowServices ? 'subshow' : 'subhidden'}>
-                            {ServiciosLista.map(servicio =>
-        
-                                <li key={servicio.id} onClick={() => { dispatch(showNavBar()) }}><Link to=
+                            <ul id={varShowServices ? 'subshow' : 'subhidden'}>
+                                {ServiciosLista.map(servicio =>
 
-                                    {servicio.hasOwnProperty('Subservicios') ?
+                                    <li key={servicio.id} onClick={() => { dispatch(showNavBar()) }}><Link to=
 
-                                        {
-                                            pathname: '/subservicios',
-                                            state: {
-                                                servicio: servicio.Servicio,
-                                                subservicios: servicio.Subservicios
+                                        {servicio.hasOwnProperty('Subservicios') ?
 
-                                            }
-                                        } :
+                                            {
+                                                pathname: '/subservicios',
+                                                state: {
+                                                    servicio: servicio.Servicio,
+                                                    subservicios: servicio.Subservicios
 
-                                        {
-                                            pathname: '/servicio',
-                                            state: {
-                                                nombre: servicio.Servicio,
-                                                imagen: logo,
-                                                precio: servicio.Precio,
-                                                descripcion: servicio.Descripcion
-                                            }
+                                                }
+                                            } :
 
-                                        }}
-                                >{servicio.Servicio}</Link></li>
-                            )}
-                        </ul>
+                                            {
+                                                pathname: '/servicio',
+                                                state: {
+                                                    nombre: servicio.Servicio,
+                                                    imagen: logo,
+                                                    precio: servicio.Precio,
+                                                    descripcion: servicio.Descripcion
+                                                }
+
+                                            }}
+                                    >{servicio.Servicio}</Link></li>
+                                )}
+                            </ul>
                         </div>
                         <li onClick={() => dispatch(showProductos())}>Productos
 
                             <ul id={varShowProductos ? 'subshow' : 'subhidden'}>
                                 <li>
-                                    LIDHERMA 
+                                    LIDHERMA
                                 </li>
                                 <li>
                                     EXEL
@@ -71,10 +73,11 @@ const NavBar = () => {
 
                             </ul>
                         </li>
-                      <li>
-                          <Link to='/portafolio'>Portafolio</Link>
-                                        
-                     </li>                      
+                        <li>
+                            <Link to='/portafolio'>Portafolio</Link>
+
+                        </li>
+                       
                     </ul>
 
                 </div>

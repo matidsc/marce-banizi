@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { AiOutlineWhatsApp } from "react-icons/ai";
 
 export const RoundedBtn = (props) => {
     const myStyle = {
@@ -18,8 +17,10 @@ export const RoundedBtn = (props) => {
     };        
 
     /*  1 PARA CONCATENAR:::::::: childContainer = { ...childContainer, backgroundColor: props.color }*/
+    console.log(props.linkTo.pathname)
     return (
         <button style={myStyle} onClick={props.handleClick}>
+            
             {props.icon}
             <Link style={{color:props.color}}to={props.linkTo}>{props.text}</Link>
             

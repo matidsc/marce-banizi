@@ -13,6 +13,7 @@
     list-style: none;
     margin: 10px;
     cursor: pointer;
+    height: 20px;
 }
 nav{
     background-color: black;
@@ -39,10 +40,13 @@ nav{
     flex-direction: row;
 }
 #subshow{
-    display: block;
     position: absolute;
     z-index: 1;
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
 }
 #subhidden{
     display: none;

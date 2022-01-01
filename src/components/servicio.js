@@ -6,6 +6,7 @@ import img from '../img/logoPrincipal.jpeg'
 import { RoundedBtn } from './roundedBtn'
 const Servicio = (props) => {
 /*console.log("LARGO DE SUBSERVICIOS"+props.subservicios.length)*/
+
 return (
         <div className='divServicio'>
             <h1 className='titleServicio'>{props.servicio}</h1>

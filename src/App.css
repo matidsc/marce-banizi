@@ -5,7 +5,7 @@
     
 
 *{
-    font-family: 'Gruppo', cursive;
+    font-family: 'Gruppo', 'Arial',cursive;
     font-weight: 700;
     box-sizing: border-box;
     padding: 0;margin: 0;
@@ -17,7 +17,6 @@ body{
     box-sizing: border-box;    
 }
 .App{
-    display: flex;
     flex-direction:column;
     align-items: center;
 
