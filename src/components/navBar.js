@@ -1,21 +1,19 @@
 import logo from '../img/logoPrincipal.jpeg'
-import style from '../style/StyleNavBar.css'
+import '../style/StyleNavBar.css'
 import { HiMenuAlt2 } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { showProductos, showServices, showNavBar } from '../redux/navState';
+import { showServices, showNavBar } from '../redux/navState';
 import { useDispatch } from 'react-redux';
 
-import ServiciosLista from '../samples/servicios.json'
+import ServiciosLista from '../JSON/servicios.json'
 
 const NavBar = () => {
 
     const { varShow, varShowProductos, varShowServices } = useSelector((state) => state.navState)
 
     const dispatch = useDispatch()
-    console.log('SERVICIOS: '+varShowServices)    
-    console.log('PRODUCTOS: '+varShowProductos)
-   
+
     return (
 
         <>
@@ -27,7 +25,7 @@ const NavBar = () => {
                     <ul>
                         <li onClick={() => dispatch(showNavBar())}><Link to='/' >Inicio</Link></li>
 
-                        <div className='dropdown'><li onClick={() => dispatch(showServices())}>Servicios</li>
+                        <div><li onClick={() => dispatch(showServices())}>Servicios</li>
                             <ul id={varShowServices ? 'subshow' : 'subhidden'}>
                                 {ServiciosLista.map(servicio =>
 
@@ -48,7 +46,7 @@ const NavBar = () => {
                                                 pathname: '/servicio',
                                                 state: {
                                                     nombre: servicio.Servicio,
-                                                    imagen: logo,
+                                                    imageList: servicio.imagenes,
                                                     precio: servicio.Precio,
                                                     descripcion: servicio.Descripcion
                                                 }
@@ -58,26 +56,12 @@ const NavBar = () => {
                                 )}
                             </ul>
                         </div>
-                        <li onClick={() => dispatch(showProductos())}>Productos
-
-                            <ul id={varShowProductos ? 'subshow' : 'subhidden'}>
-                                <li>
-                                    LIDHERMA
-                                </li>
-                                <li>
-                                    EXEL
-                                </li>
-                                <li>
-                                    TODOS
-                                </li>
-
-                            </ul>
-                        </li>
+                        
                         <li>
                             <Link to='/portafolio'>Portafolio</Link>
 
                         </li>
-                       
+
                     </ul>
 
                 </div>

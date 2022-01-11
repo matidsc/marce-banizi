@@ -3,20 +3,17 @@ body{
 }
 .imgHome{
     background-image: url(../img/imgHome.jpeg);
-    background-attachment: fixed;
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
-    width: 60%;
-    margin-bottom: -20px;
+    width: 70%;
+    margin-bottom: -30px;
+    border-radius: 0 0 20px 20px;
 }
 @media screen and (max-width:768px){
-    
-    
+        
     .imgHome{
-        background-image: url(../img/imgHome.jpeg);
-        background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
