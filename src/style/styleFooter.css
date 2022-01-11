@@ -11,6 +11,7 @@ footer{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
 }
 footer h2{
     margin: 0;

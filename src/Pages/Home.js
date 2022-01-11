@@ -1,14 +1,7 @@
 import React from 'react'
-import style from '../style/styleHome.css'
-import { useSelector } from 'react-redux';
+import'../style/styleHome.css'
 
-/*const style={
-
-    backgroundRepeat: 'noRepeat',
-    backgroundAttachment: 'fixed'
-}*/
 const Home=()=>{
-    const{ show } =useSelector((state)=>state.navState)
 
     return(
         
