@@ -1,25 +1,25 @@
 body{
     background-color: black;
+
 }
+
 .imgHome{
-    background-image: url(../img/imgHome.jpeg);
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 90vh;
-    width: 70%;
+
+    width: 55%;
     margin-bottom: -30px;
     border-radius: 0 0 20px 20px;
 }
-@media screen and (max-width:768px){
+
+@media screen and (max-width:765px){
         
     .imgHome{
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 60vh;
-        width: 100vw;
-    }
+      
+        width: 70vw;
+ }
  
 }
-
+@media screen and (max-width:500px){
+    .imgHome{
+        width: 100vw;
+    }
+}

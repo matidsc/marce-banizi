@@ -52,7 +52,7 @@ nav{
 
 @media screen and (max-width: 768px) {
     #subshow{
-        position: static;
+        position: inherit;
         align-items: baseline;
         background-color: white;
         flex-direction: column;
@@ -60,6 +60,8 @@ nav{
         width: 100%;
         z-index: 1;
         transition: all 3s;
+        row-gap: 20px;
+        margin-top: 20px;
     }
     #subhidden{
         display: none;
@@ -68,9 +70,9 @@ nav{
     .hamburger{
         display: block;
         margin-left: 30px;
-    cursor: pointer;
-    color: white;
-    -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
+        color: white;
+        -webkit-tap-highlight-color: transparent;
     }
     nav{
         z-index: 1; 
@@ -94,10 +96,9 @@ nav{
         z-index: 10;
    }
    .navBarLinks{
-    transition: max-height 0.15s ease-out;
-    overflow: hidden;
     -webkit-tap-highlight-color: transparent;
-
+        overflow-y: scroll;
+        overflow-x: hidden;
    }
     nav #hidden{
         display: none;
@@ -109,7 +110,8 @@ nav{
         width: 100%;
         row-gap: 7px;
         margin: 20px 0 20px 30px;
-    
+        max-height: 63vh;
+
     }
     .navBarLinks ul a{
         color: black;
