@@ -6,13 +6,12 @@ import Footer from './components/footer'
 import Servicios from './Pages/Servicios'
 import Home from './Pages/Home'
 import Productos from './Pages/Productos'
-import Servicio from './components/servicio';
-import ServicioIndividual from './components/individualServicio'
 import Portafolio from './Pages/Portafolio';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import IndividualServicio from './components/individualServicio';
 
@@ -29,14 +28,17 @@ const App = () => {
       <div className='App'>
 
         <Switch>
-          <Route path="/servicio" component={() => <IndividualServicio />} />
+          <Route path='/servicio' component={IndividualServicio} />
+                <Fragment>
 
-          <Fragment>
+            <Route path='/subservicios' component={Servicios} />
+            <Route path='/productos' component={Productos} />
+            <Route path='/' exact component={Home} >
 
-            <Route path="/subservicios" component={() => <Servicios />} />
-            <Route path='/productos' component={() => <Productos />} />
-            <Route path='/' exact component={Home} />
-            <Route path='/portafolio' component={() => <Portafolio />} />
+            </Route>
+
+            <Route path='/portafolio' component={Portafolio} />
+
             <Footer />
 
           </Fragment>

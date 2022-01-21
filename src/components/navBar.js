@@ -23,7 +23,7 @@ const NavBar = () => {
                 <div className='navBarLinks' id={varShow ? 'show' : 'hidden'}>
 
                     <ul>
-                        <li onClick={() => dispatch(showNavBar())}><Link to='/' >Inicio</Link></li>
+                        <li onClick={() => dispatch(showNavBar())}><Link to='/'>Inicio</Link></li>
 
                         <div><li onClick={() => dispatch(showServices())}>Servicios</li>
                             <ul id={varShowServices ? 'subshow' : 'subhidden'}>

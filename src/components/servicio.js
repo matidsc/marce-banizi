@@ -4,7 +4,7 @@ import '../style/StyleServicio.css'
 import { RoundedBtn } from './roundedBtn'
 const Servicio = (props) => {
 /*console.log("LARGO DE SUBSERVICIOS"+props.subservicios.length)*/
-console.log(props.imagen)
+console.log("LALALALLALALALALAL"+props)
 return (
         <div className='divServicio'>
             <h1 className='titleServicio'>{props.servicio}</h1>
@@ -12,7 +12,7 @@ return (
     <img className='imgServicio' src={require("../img/Servicios/" + props.imagenes[0]).default}/> 
             <RoundedBtn width={"100%"} height={"53px"}text={'Más información'} color='black'
             linkTo={
-                {pathname:'/servicio', 
+                {pathname:`/servicio`, 
                     state:{
                         nombre:props.servicio,
                         imageList:props.imagenes,

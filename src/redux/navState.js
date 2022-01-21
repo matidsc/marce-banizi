@@ -8,19 +8,10 @@ export const navBarSlice = createSlice({
       varShowProductos:false
   },
   reducers: {
-    showNavBar: (state) => {
-      
-      state.varShow=!state.varShow
-    },
-    showServices:(state)=>{
-      state.varShowServices=!state.varShowServices
-    },
-    showProductos:(state)=>{
-      state.varShowProductos=!state.varShowProductos
-    }
-
-   
-  },
+    showNavBar: (state) => {state.varShow =! state.varShow},
+    showServices:(state)=>{state.varShowServices =! state.varShowServices}
+    /*showProductos:(state)=>{state.varShowProductos=!state.varShowProductos}*/
+  }
 })
 
 // Action creators are generated for each case reducer function
