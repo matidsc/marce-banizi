@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MainTitle from '../components/mainTitle'
-import Galeria from '../components/galería'
+import ImageGallery from '../components/imageGallery'
 import PropTypes from 'prop-types'
 
 const Portafolio = () => {
@@ -14,12 +14,10 @@ const Portafolio = () => {
         <div>
             <main className='HomeWrapper' id='pageWrapper'>
                 <MainTitle title='Portafolio'/>
-                <Galeria ruta="Portafolio/" imageList={imageList}/>
+                <ImageGallery ruta="Portafolio/" imageList={imageList}/>
             </main>
         </div>
     )
 }
-Portafolio.propTypes = {
-    ruta: PropTypes.string.isRequired
-}
+
 export default Portafolio

@@ -1,7 +1,6 @@
-import style from '../src/App.css'
+import '../src/App.css'
 import NavBar from './components/navBar';
 import React, { Fragment } from 'react';
-import logoSec from './img/logoSecundario.jpeg'
 import Footer from './components/footer'
 import Servicios from './Pages/Servicios'
 import Home from './Pages/Home'
@@ -17,25 +16,18 @@ import IndividualServicio from './components/individualServicio';
 
 const App = () => {
 
-  /* <Servicio title='Maquillaje profesional' subtitles={['Maquillaje Social', 'Novias', '15 años',]} descriptions={['Si sos invitada o tenés un evento','','']}/>(*/
-  /*             <Route path='/servicios' render={(props) => <Servicios {...props} title={`Props through render`}} ></Route>
-  */
-
-
   return (
     <Router>
-      <NavBar />
+      <NavBar/>
       <div className='App'>
 
         <Switch>
           <Route path='/servicio' component={IndividualServicio} />
-                <Fragment>
+          <Fragment>
 
             <Route path='/subservicios' component={Servicios} />
             <Route path='/productos' component={Productos} />
-            <Route path='/' exact component={Home} >
-
-            </Route>
+            <Route path='/' exact component={Home}/>
 
             <Route path='/portafolio' component={Portafolio} />
 
@@ -47,8 +39,6 @@ const App = () => {
       </div>
     </Router>
   )
-
-
 
 }
 export default App

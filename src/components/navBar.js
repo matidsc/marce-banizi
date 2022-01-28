@@ -5,13 +5,11 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { showServices, showNavBar } from '../redux/navState';
 import { useDispatch } from 'react-redux';
-
 import ServiciosLista from '../JSON/servicios.json'
 
 const NavBar = () => {
 
     const { varShow, varShowProductos, varShowServices } = useSelector((state) => state.navState)
-
     const dispatch = useDispatch()
 
     return (
