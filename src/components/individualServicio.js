@@ -28,9 +28,7 @@ const IndividualServicio = () => {
 
                     <button className='btnFlotante'>
                         <AiOutlineWhatsApp size="40" className='iconFooter' />
-
                         Consultame sobre el servicio
-
                     </button>
 
                 </div>
