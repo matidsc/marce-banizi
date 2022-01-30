@@ -1,10 +1,9 @@
 .mainTitle{
     align-self: center;
     margin-bottom: 50px;
-    color:white;
+    color: var(--light-text-color);
     padding: 15px 15px;
     border-radius: 10px;
-    background-color: #ff1616;
-    text-align: center;
-    
+    background-color: var(--accentRed);
+    text-align: center; 
 }

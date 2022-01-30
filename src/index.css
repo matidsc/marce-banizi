@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+*{
+  line-height: 200%;
+}
+button{
+  transition: 1s;
+}
+:root{
+
+  --dark-bg-color:#000000;
+  --light-bg-color:#fff;
+  --light-text-color:#fff;
+  --dark-text-color:#000000;
+  --accentRed:#ff1616;
+  --accentGray:#d9d9d9;
+
+}

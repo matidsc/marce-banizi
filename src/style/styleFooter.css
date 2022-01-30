@@ -1,6 +1,6 @@
 
 footer{
-    background-color: white;
+    background-color: var(--light-bg-color);
     color: black;
     height: 22vh;
     border-radius: 20px 20px 0 0;
@@ -24,13 +24,13 @@ footer h2::after{
     content: '';
     width: 50px;
     height: 10px;
-    background-color: #ff1616;
+    background-color: var(--accentRed);
     margin-top: 10px;
 }
 .footerWrapper{
     
     width: 100%;
-    background-color: white;            
+    background-color: var(--light-bg-color);            
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -51,7 +51,7 @@ footer{
     }
 }
 /*.footerWrapper{
-    background-color: black;
+    background-color: var(--dark-bg-color);
     width: 100vw;
     height: 100px;
     display: flex;

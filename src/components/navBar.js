@@ -23,11 +23,11 @@ const NavBar = () => {
                     <ul>
                         <li onClick={() => dispatch(showNavBar())}><Link to='/'>Inicio</Link></li>
 
-                        <div><li onClick={() => dispatch(showServices())}>Servicios</li>
-                            <ul id={varShowServices ? 'subshow' : 'subhidden'}>
+                        <div><li onClick={() => dispatch(showServices())}><a>Servicios</a></li>
+                            <ul className='prueba' id={varShowServices ? 'subshow' : 'subhidden'}>
                                 {ServiciosLista.map(servicio =>
 
-                                    <li key={servicio.id} onClick={() => { dispatch(showNavBar()) }}><Link to=
+                                    <li key={servicio.id} onClick={() => dispatch(showNavBar())}><Link to=
 
                                         {servicio.hasOwnProperty('Subservicios') ?
 

@@ -1,6 +1,5 @@
 body{
-    background-color: black;
-
+    background-color: var(--dark-bg-color);
 }
 
 .imgHome{
