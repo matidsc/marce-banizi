@@ -3,9 +3,6 @@ import { useLocation } from "react-router-dom";
 import '../style/styleServicioIndividual.css'
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import Galeria from './galería';
-/*  <RoundedBtn text='Ver detalles'linkTo='' height='60px'backColor='#FF1717' color='#FFFFFF' />
-    <div style ={ { backgroundImage: "url("+info.state.imagen+")" } }className='parallaxWrapper'></div>
-*/
 
 const IndividualServicio = () => {
     const [showMore, setShowMore] = useState(false);
@@ -26,10 +23,10 @@ const IndividualServicio = () => {
                     </div>
                     <button onClick={() => setShowMore(!showMore)} className="showMore">{ showMore? "Mostrar menos": "Mostrar más"}</button>
 
-                    <button className='btnFlotante'>
+                   <a href={'https://wa.me/59895457744/?text=Hola, quisiera consultarte sobre el servicio de '+info.state.nombre}><button  className='btnFlotante'>
                         <AiOutlineWhatsApp size="40" className='iconFooter' />
                         Consultame sobre el servicio
-                    </button>
+                    </button> </a> 
 
                 </div>
 

@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import { useLocation } from "react-router-dom";
 
 const Servicios=()=> {
-    const{ varShow } =useSelector((state)=>state.navState)
     const info = useLocation();
     console.log(info.state.subservicios)
 

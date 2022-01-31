@@ -50,9 +50,7 @@ nav{
     display: flex;
     flex-direction: row;
 }
-.prueba{
-    transition: 1s all;
-}
+
 #subshow{
     position: absolute;
     z-index: 1;
@@ -72,6 +70,9 @@ nav{
 }
 
 @media screen and (max-width: 768px) {
+    .navBarLinks ul li a::after{
+        display: none;
+    }
     #subshow{
         position: inherit;
         align-items: baseline;
@@ -81,7 +82,7 @@ nav{
         width: 100%;
         z-index: 1;
         transition:3s all ;
-        row-gap: 20px;
+        row-gap: 100%;
         margin-top: 20px;
     }
     #subhidden{

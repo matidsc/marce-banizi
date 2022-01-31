@@ -12,20 +12,28 @@ import React from 'react'
 const Footer = () => {
 
     return (
-        
+
         <footer id='contacto'>
             <h2>Contacto</h2>
             <div className='footerWrapper'>
-                <AiOutlineWhatsApp size="40" className='iconFooter' />
-                <HiOutlineMail size="40" className='iconFooter' />
-                <AiOutlineInstagram size="40" className='iconFooter' />
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=59895457744">
+                    <AiOutlineWhatsApp size="40" className='iconFooter' />
+                </a>
+                <a target="_blank" href="https://www.instagram.com/marcebanizi.estudio/">
+                    <HiOutlineMail size="40" className='iconFooter' />
+                </a>
+
+                <a target="_blank" href="https://www.instagram.com/marcebanizi.estudio/">
+                    <AiOutlineInstagram size="40" className='iconFooter' />
+                </a>
+
             </div>
         </footer>)
 
-    
 
 
-    
+
+
 
 }
 export default Footer
