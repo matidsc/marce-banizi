@@ -22,7 +22,7 @@ export const RoundedBtn = (props) => {
         <button style={myStyle} onClick={props.handleClick}>
             
             {props.icon}
-            <Link style={{color:props.color}}to={props.linkTo}>{props.text}</Link>
+            <Link style={{display:'block',color:props.color}}to={props.linkTo}>{props.text}</Link>
             
         </button>
     )

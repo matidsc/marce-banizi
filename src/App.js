@@ -6,19 +6,22 @@ import Servicios from './Pages/Servicios'
 import Home from './Pages/Home'
 import Productos from './Pages/Productos'
 import Portafolio from './Pages/Portafolio';
+import ResetScroll from './components/resetScroll';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect
+  Route
+  
 } from "react-router-dom";
 import IndividualServicio from './components/individualServicio';
 
 const App = () => {
 
+
   return (
     <Router>
-      <NavBar/>
+      <ResetScroll/>
+      <NavBar />
       <div className='App'>
 
         <Switch>
@@ -27,7 +30,7 @@ const App = () => {
 
             <Route path='/subservicios' component={Servicios} />
             <Route path='/productos' component={Productos} />
-            <Route path='/' exact component={Home}/>
+            <Route path='/' exact component={Home} />
 
             <Route path='/portafolio' component={Portafolio} />
 

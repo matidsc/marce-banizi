@@ -47,13 +47,12 @@
 @media screen and (min-width:768px) {
   .galeriaWrapper{
     transform:  translate3d(0,0,0);
-      height:calc(70vh - 65px);
-    
+    height:calc(70vh - 65px);
   }
   .imgMain{ 
-      width: 100%;
-      border-radius: 0;
-      height: 100%;
+    width: 100%;
+    border-radius: 0;
+    height: 100%;
  }
  .arrow{
 
@@ -66,5 +65,5 @@
 }
 .imgActiva{
   height: 100%;
-}
+  }
 }
