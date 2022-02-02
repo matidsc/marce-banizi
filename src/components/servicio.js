@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import '../style/StyleServicio.css'
-import { RoundedBtn } from './roundedBtn'
+import { Link } from 'react-router-dom';
 const Servicio = (props) => {
    
     return (
@@ -9,9 +9,9 @@ const Servicio = (props) => {
             <h1 className='titleServicio'>{props.servicio}</h1>
 
             <img className='imgServicio' src={require("../img/Servicios/" + props.imagenes[0]).default} />
-            <RoundedBtn width={"100%"} height={"53px"} text={'Más información'} color='black'
-                linkTo={
-                    {
+            <button className='btnMasInformacion'>
+            <Link style={{display:'block',color:'white'}}to={{
+                      
                         pathname: `/servicio`,
                         state: {
                             nombre: props.servicio,
@@ -20,7 +20,7 @@ const Servicio = (props) => {
                             descripcion: props.descripcion
                         }
 
-                    }} />
+            }}>Más información</Link> </button>
         </div>
 
     )
