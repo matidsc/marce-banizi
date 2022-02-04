@@ -1,4 +1,4 @@
-import logo from '../img/logoPrincipal.jpeg'
+import logo from '../img/logoPrincipalDark.jpeg'
 import '../style/StyleNavBar.css'
 import { HiMenuAlt2 } from "react-icons/hi";
 import { Link } from 'react-router-dom';
@@ -27,7 +27,7 @@ const NavBar = () => {
                             <ul className='prueba' id={varShowServices ? 'subshow' : 'subhidden'}>
                                 {ServiciosLista.map(servicio =>
 
-                                    <li key={servicio.id} onClick={() => dispatch(showNavBar())}><Link to=
+                                    <li key={servicio.id}><Link to=
 
                                         {servicio.hasOwnProperty('Subservicios') ?
 
@@ -50,7 +50,7 @@ const NavBar = () => {
                                                 }
 
                                             }}
-                                    >{servicio.Servicio}</Link></li>
+                                    onClick={() => dispatch(showServices())}>{servicio.Servicio}</Link></li>
                                 )}
                             </ul>
                         </div>
