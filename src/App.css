@@ -9,7 +9,6 @@
     padding: 0;margin: 0;
 }
 body{
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;    
@@ -17,7 +16,6 @@ body{
 .App{
     flex-direction:column;
     align-items: center;
-
 }
 
 @media screen and(min-width:768px)  {

@@ -12,9 +12,7 @@ const IndividualServicio = () => {
       
         console.log("NYA"+paragraphh.current)
     }, [paragraphh]);
-    function handleBackClick() {
-        paragraphh.current.scrollIntoView({ behavior: 'smooth' })
-    }
+   
     return (
         <div id='pageWrapper'>
             <div className='wrapperIndividualServicio'>
@@ -27,7 +25,7 @@ const IndividualServicio = () => {
                     <div ref={paragraphh}className={showMore ? 'paragraph' : 'paragraph infoHide'}>
                         <p>{separador(info.state.descripcion)}</p>
                     </div>
-                    <button onClick={() => {setShowMore(!showMore); handleBackClick() }} className="showMore">{ showMore? "Mostrar menos": "Mostrar más"}</button>
+                    <button onClick={() => {setShowMore(!showMore);paragraphh.current.scrollTop=0 }} className="showMore">{ showMore? "Mostrar menos": "Mostrar más"}</button>
 
                    <a href={'https://wa.me/59895457744/?text=Hola, quisiera consultarte sobre el servicio de '+info.state.nombre}><button  className='btnFlotante'>
                         <AiOutlineWhatsApp size="40" className='iconFooter' />

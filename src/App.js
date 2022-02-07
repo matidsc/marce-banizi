@@ -30,9 +30,10 @@ const App = () => {
 
             <Route path='/subservicios' component={Servicios} />
             <Route path='/productos' component={Productos} />
+            <Route path='/portafolio' component={Portafolio} />
+
             <Route path='/' exact component={Home} />
 
-            <Route path='/portafolio' component={Portafolio} />
 
             <Footer />
 
