@@ -19,7 +19,7 @@ const NavBar = () => {
                 <HiMenuAlt2 size="40" className='hamburger' onClick={() => dispatch(showNavBar())} />
                 <img src={logo} className='logoNavBar' />
                 <div className='navBarLinks' id={varShow ? 'show' : 'hidden'}>
-
+        
                     <ul>
                         <li onClick={() => dispatch(showNavBar())}><Link to='/'>Inicio</Link></li>
 
@@ -30,7 +30,7 @@ const NavBar = () => {
                                     <li key={servicio.id}><Link to=
 
                                         {servicio.hasOwnProperty('Subservicios') ?
-
+                                        
                                             {
                                                 pathname: '/subservicios',
                                                 state: {
@@ -50,7 +50,7 @@ const NavBar = () => {
                                                 }
 
                                             }}
-                                    onClick={() => dispatch(showServices())}>{servicio.Servicio}</Link></li>
+                                    onClick={() =>{dispatch(showServices()); dispatch(showNavBar())} }>{servicio.Servicio}</Link></li>
                                 )}
                             </ul>
                         </div>

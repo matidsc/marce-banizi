@@ -2,22 +2,24 @@
   color: white;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 0;
   align-items: center;
 }
 
 .wrapperDetallesServicio {
   display: flex;
   flex-direction: column;
-  row-gap: 1%;
+  row-gap: 1.5vh;
   background-color: var(--light-bg-color);
   color: var(--dark-text-color);
   border-radius: 20px 20px 0 0;
   margin-bottom: 65px;
+  margin-top: 20px;
   padding: 30px;
   white-space: pre-line;
   z-index: 1;
   height: auto;
+  
 }
 
 .wrapperIndividualServicio p {
@@ -68,7 +70,7 @@
   min-width: 20%;
   font-size: 1em;
   margin-top: 3%;
-  padding: 1% 2%;
+  padding: 4% 6%;
   align-self: center;
   transition: all 1s;
   cursor: pointer;
@@ -85,16 +87,18 @@
     width: 70%;
     flex-direction: row;
     align-items: center;
-    height: calc(80vh - 65px);
+    height: calc(82vh - 65px);
     border-radius: 5px;
     overflow: hidden;
+    margin-top: 3vh;
   }
-
   .wrapperDetallesServicio {
     width: 60%;
     height: 100%;
     border-radius: 0;
     margin: 0;
+    row-gap: 3%;
+
   }
 
   .galeriaWrapper {
@@ -102,6 +106,9 @@
     height: 100%;
     border-radius: 0;
   }
+  .showMore{
+    padding: 2% 4%;
 
+  }
 
 }

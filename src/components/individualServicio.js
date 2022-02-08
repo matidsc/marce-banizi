@@ -6,12 +6,7 @@ import Galeria from './galería';
 const IndividualServicio = () => {
     const [showMore, setShowMore] = useState(false);
     const info = useLocation();
-    console.log(showMore)
-    const paragraphh = useRef(null)
-    useEffect(() => {
-      
-        console.log("NYA"+paragraphh.current)
-    }, [paragraphh]);
+    const paragraphh = useRef(  )
    
     return (
         <div id='pageWrapper'>

@@ -2,7 +2,6 @@
   height:calc(60vh - 65px);
 }
 .imgMain{
-  border-radius: 30px;
   max-height: 85vh;
   object-fit: cover;
   width: 100vw;
@@ -47,7 +46,7 @@
 @media screen and (min-width:768px) {
   .galeriaWrapper{
     transform:  translate3d(0,0,0);
-    height:calc(70vh - 65px);
+    height:calc(82vh - 65px);
   }
   .imgMain{ 
     width: 100%;
@@ -60,9 +59,7 @@
   top: 50%;
 
 }
- .galeriaWrapper{
-  height:calc(80vh - 65px);
-}
+
 .imgActiva{
   height: 100%;
   }
