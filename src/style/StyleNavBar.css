@@ -65,6 +65,7 @@ nav{
 #subshow li{
     height: fit-content;
     margin:0;
+    width: fit-content;
 }
 #subhidden{
     display: none;
