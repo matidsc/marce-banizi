@@ -7,8 +7,8 @@
 .navBarLinks a{
     color: var(--light-text-color);
 }
-
-.navBarLinks ul li a::after{
+/*ARREGLAR ESTO!!!!!!!!!!*/
+.navBarLinks ul li a::after, .navbarLinks ul div *::after{
     position: relative;
     left: 0;
     right: 0;
@@ -16,11 +16,12 @@
     content: '';
     color: transparent;
     background: #aaa;
-    height: 1px;
+    height: 2px;
     display: block;
     transition: width 1s;
+    bottom: -5px;
 }
-.navBarLinks ul li a:hover::after{
+.navBarLinks ul li a:hover::after,.navbarLinks ul div li *:hover::after{
     width: 100%;
 }
 .navBarLinks ul li{
@@ -58,14 +59,19 @@ nav{
     flex-direction: column;
     height: auto;
     justify-content: center;
-    padding: 5px;
-    row-gap: 25px;
-    padding: 25px;
+    border: 2px solid black;
 }
 #subshow li{
     height: fit-content;
     margin:0;
-    width: fit-content;
+    padding: 15px;
+    transition: background-color 0.5s;
+}
+#subshow li a::after{
+    display: none;
+}
+#subshow li:hover{
+    background-color: var(--accentRed);
 }
 #subhidden{
     display: none;

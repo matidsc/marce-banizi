@@ -1,4 +1,4 @@
-import React, { useState,useRef,useEffect } from 'react'
+import React, { useState,useRef} from 'react'
 import { useLocation } from "react-router-dom";
 import '../style/styleServicioIndividual.css'
 import { AiOutlineWhatsApp } from "react-icons/ai";
@@ -36,7 +36,7 @@ const IndividualServicio = () => {
 }
 function separador(descripcion) {
 
-    return descripcion.split('.').join("." + "\n");
+    return descripcion.split('.').join("." & "\n");
 
 }
 export default IndividualServicio

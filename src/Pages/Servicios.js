@@ -2,7 +2,6 @@ import React from 'react'
 import '../style/StyleServicios.css'
 import Servicio from '../components/servicio'
 import MainTitle from '../components/mainTitle'
-import { useSelector } from 'react-redux';
 import { useLocation } from "react-router-dom";
 
 const Servicios=()=> {

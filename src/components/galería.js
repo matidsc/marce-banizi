@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import '../style/styleGaleria.css'
 import { IoIosArrowBack,IoIosArrowForward } from "react-icons/io";
 import PropTypes from 'prop-types'
@@ -17,7 +17,7 @@ const Galeria = (props) => {
     }
     return (
         <div className='galeriaWrapper'>
-            <IoIosArrowBack  style={props.imageList.length==1 ? { display:"none"} : {display:"block" }} className='arrow arrowL' size="40" onClick={prevImg} />
+            <IoIosArrowBack  style={props.imageList.length===1 ? { display:"none"} : {display:"block" }} className='arrow arrowL' size="40" onClick={prevImg} />
 
             {
                 props.imageList.map((img, index) => {
@@ -32,7 +32,7 @@ const Galeria = (props) => {
                     )
                 })
             }
-            <IoIosArrowForward style={props.imageList.length==1 ? { display:"none"} : {display:"block" }} className='arrow arrowR' size="40" onClick={nextImg} />
+            <IoIosArrowForward style={props.imageList.length===1 ? { display:"none"} : {display:"block" }} className='arrow arrowR' size="40" onClick={nextImg} />
 
         </div>
     )

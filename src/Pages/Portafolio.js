@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import MainTitle from '../components/mainTitle'
 import ImageGallery from '../components/imageGallery'
-import PropTypes from 'prop-types'
 
 const Portafolio = () => {
 

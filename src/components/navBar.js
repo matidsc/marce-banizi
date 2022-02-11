@@ -9,7 +9,7 @@ import ServiciosLista from '../JSON/servicios.json'
 
 const NavBar = () => {
 
-    const { varShow, varShowProductos, varShowServices } = useSelector((state) => state.navState)
+    const { varShow, varShowServices } = useSelector((state) => state.navState)
     const dispatch = useDispatch()
 
     return (
@@ -23,7 +23,7 @@ const NavBar = () => {
                     <ul>
                         <li onClick={() => dispatch(showNavBar())}><Link to='/'>Inicio</Link></li>
 
-                        <div><li onClick={() => dispatch(showServices())}><a>Servicios</a></li>
+                        <div><li classname='bubu'onClick={() => dispatch(showServices())}>Servicios</li>
                             <ul className='prueba' id={varShowServices ? 'subshow' : 'subhidden'}>
                                 {ServiciosLista.map(servicio =>
 

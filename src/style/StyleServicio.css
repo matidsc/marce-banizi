@@ -55,6 +55,8 @@ a{
     }
     .titleServicio::after{
         display: block;
+        position: relative;
+        bottom: -10px;
         content: '';
         width: 50%;
         height: 4px;
