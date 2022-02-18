@@ -17,6 +17,7 @@
     border-radius: 25px;
     background-color: var(--accentRed);
     font-Size:1.1em;
+    box-shadow: rgba(255, 0, 0, 0.5) 0px 7px 29px 0px;
 
 }
 .titleServicio{
@@ -46,6 +47,7 @@ a{
         border-radius: 15px;
         padding: 5%;
         justify-items: center;
+
     }
     .titleServicio{
         grid-column: 1/2;
@@ -76,6 +78,7 @@ a{
         background-color: var(--accentRed);
         font-Size:1.1em;
         cursor: pointer;
+        box-shadow: rgba(255, 0, 0, 0.5) 0px 7px 29px 0px;
     }
     .btnMasInformacion:hover{
         background-color: var(--accentRedHover);

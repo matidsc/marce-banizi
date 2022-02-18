@@ -11,20 +11,20 @@ const NavBar = () => {
 
     const { varShow, varShowServices } = useSelector((state) => state.navState)
     const dispatch = useDispatch()
-
+    {varShow?document.body.style.overflowY = "hidden":document.body.style.overflowY = "scroll"}
     return (
 
         <>
             <nav style={varShow ? { zIndex: "3", borderRadius: '0' } : { borderRadius: '0 0 20px 20px', zIndex: "3" }} >
-                <HiMenuAlt2 size="40" className='hamburger' onClick={() => dispatch(showNavBar())} />
+                <HiMenuAlt2 size="30" className='hamburger' onClick={() => dispatch(showNavBar())} />
                 <img src={logo} className='logoNavBar' />
                 <div className='navBarLinks' id={varShow ? 'show' : 'hidden'}>
         
                     <ul>
-                        <li onClick={() => dispatch(showNavBar())}><Link to='/'>Inicio</Link></li>
+                        <li onClick={() => dispatch(showNavBar())}><Link className='item' to='/'>Inicio</Link></li>
 
-                        <div><li classname='bubu'onClick={() => dispatch(showServices())}>Servicios</li>
-                            <ul className='prueba' id={varShowServices ? 'subshow' : 'subhidden'}>
+                        <div><li className='item'onClick={() => dispatch(showServices())}>Servicios</li>
+                            <ul id={varShowServices ? 'subshow' : 'subhidden'}>
                                 {ServiciosLista.map(servicio =>
 
                                     <li key={servicio.id}><Link to=
@@ -56,7 +56,7 @@ const NavBar = () => {
                         </div>
                         
                         <li>
-                            <Link to='/portafolio'>Portafolio</Link>
+                            <Link onClick={()=>dispatch(showNavBar())} className='item' to='/portafolio'>Portafolio</Link>
 
                         </li>
 

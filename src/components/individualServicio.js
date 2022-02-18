@@ -22,7 +22,7 @@ const IndividualServicio = () => {
                     </div>
                     <button onClick={() => {setShowMore(!showMore);paragraphh.current.scrollTop=0 }} className="showMore">{ showMore? "Mostrar menos": "Mostrar más"}</button>
 
-                   <a href={'https://wa.me/59895457744/?text=Hola, quisiera consultarte sobre el servicio de '+info.state.nombre}><button  className='btnFlotante'>
+                   <a target='_blank' href={'https://wa.me/59895457744/?text=Hola, quisiera consultarte sobre el servicio de '+info.state.nombre}><button  className='btnFlotante'>
                         <AiOutlineWhatsApp size="40" className='iconFooter' />
                         Consultame sobre el servicio
                     </button> </a> 
@@ -36,7 +36,7 @@ const IndividualServicio = () => {
 }
 function separador(descripcion) {
 
-    return descripcion.split('.').join("." & "\n");
+    return descripcion.split('.').join("." + "\n");
 
 }
 export default IndividualServicio
