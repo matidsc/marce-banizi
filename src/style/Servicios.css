@@ -1,0 +1,20 @@
+
+.serviciosWrapper{
+    width: 80%;
+    margin-bottom:2.7vh ;
+}
+
+@media screen and (min-width:700px) {
+  
+    .serviciosWrapper{
+        width: 60%;
+    }
+  }
+  @media screen and (min-width:992px) {
+  
+    .serviciosWrapper{
+        width: 50%;
+    }
+  }
+
+

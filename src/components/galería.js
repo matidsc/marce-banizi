@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/styleGaleria.css'
+import '../style/Galeria.css'
 import { IoIosArrowBack,IoIosArrowForward } from "react-icons/io";
 import PropTypes from 'prop-types'
 

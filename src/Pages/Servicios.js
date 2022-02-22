@@ -1,5 +1,5 @@
 import React from 'react'
-import '../style/StyleServicios.css'
+import '../style/Servicios.css'
 import Servicio from '../components/servicio'
 import MainTitle from '../components/mainTitle'
 import { useLocation } from "react-router-dom";
@@ -15,7 +15,7 @@ const Servicios=()=> {
                     <MainTitle title={info.state.servicio}/>
                     
                     {info.state.subservicios.map((subservicio,index) => 
-                        <Servicio key={index} ide={index}
+                        <Servicio key={index} 
                         servicio={subservicio.nombre}imagenes={subservicio.imagenes} precio={subservicio.precio} descripcion={subservicio.descripcion} subservicios={[]}
                     />)}        
                     

@@ -1,22 +1,22 @@
 import logo from '../img/logoPrincipalDark.jpeg'
-import '../style/StyleNavBar.css'
-import { HiMenuAlt2 } from "react-icons/hi";
+import '../style/NavBar.css'
+import { HiMenuAlt1 } from "react-icons/hi";
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { showServices, showNavBar } from '../redux/navState';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import ServiciosLista from '../JSON/servicios.json'
 
 const NavBar = () => {
 
     const { varShow, varShowServices } = useSelector((state) => state.navState)
     const dispatch = useDispatch()
-    {varShow?document.body.style.overflowY = "hidden":document.body.style.overflowY = "scroll"}
+
+    {(varShow && window.matchMedia("(max-width: 768px)").matches)?document.body.style.overflowY = "hidden":document.body.style.overflowY = "scroll"}
     return (
 
         <>
             <nav style={varShow ? { zIndex: "3", borderRadius: '0' } : { borderRadius: '0 0 20px 20px', zIndex: "3" }} >
-                <HiMenuAlt2 size="30" className='hamburger' onClick={() => dispatch(showNavBar())} />
+                <HiMenuAlt1 size="30" className='hamburger' onClick={() => dispatch(showNavBar())} />
                 <img src={logo} className='logoNavBar' />
                 <div className='navBarLinks' id={varShow ? 'show' : 'hidden'}>
         

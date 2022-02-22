@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../style/StyleServicio.css'
+import '../style/Servicio.css'
 import { Link } from 'react-router-dom';
 const Servicio = (props) => {
    
@@ -29,9 +29,5 @@ const Servicio = (props) => {
 
 Servicio.propTypes = {
     servicio: PropTypes.string.isRequired
-}
-function verMas() {
-
-
 }
 export default Servicio

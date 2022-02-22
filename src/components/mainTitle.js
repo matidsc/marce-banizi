@@ -1,4 +1,4 @@
-import '../style/styleMainTitle.css'
+import '../style/MainTitle.css'
 import React from 'react'
 
 const MainTitle=(props)=>{
