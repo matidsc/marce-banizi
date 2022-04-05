@@ -1,4 +1,4 @@
-package com.bytesoft.backend;
+package com.marce_banizi.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,14 +9,14 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories
-@EntityScan("com.bytesoft.backend.modelo")
-public class BytesoftBackApplication extends SpringBootServletInitializer {
+@EntityScan("com.marce_banizi.backend.modelo")
+public class banizi_back extends SpringBootServletInitializer {
 	public static void main(String[] args) {
-		SpringApplication.run(BytesoftBackApplication.class, args);
+		SpringApplication.run(banizi_back.class, args);
 	}
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(BytesoftBackApplication.class);
+		return application.sources(banizi_back.class);
 	}
 }

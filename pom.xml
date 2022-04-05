@@ -8,9 +8,9 @@
 		<version>2.3.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>Bytesoft</groupId>
-	<artifactId>Backend</artifactId>
-	<version>1.0.0-Alpha</version>
+	<groupId>marce_banizi</groupId>
+	<artifactId>Banizi</artifactId>
+	<version>1.0</version>
 	<name>Backend</name>
 	<description>Web Application Back-end</description>
 	<packaging>war</packaging>
@@ -49,7 +49,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<scope>provided</scope>
 			<exclusions>
 				<exclusion>
 					<groupId>org.junit.vintage</groupId>
@@ -64,8 +64,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
 				<configuration>
-					<mainClass>com.bytesoft.backend.BytesoftBackApplication.java</mainClass>
+					<mainClass>com.marce_banizi.banizi_back.java</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
