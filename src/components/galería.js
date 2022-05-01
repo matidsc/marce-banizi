@@ -2,7 +2,6 @@ import React from 'react'
 import '../style/Galeria.css'
 import { IoIosArrowBack,IoIosArrowForward } from "react-icons/io";
 import PropTypes from 'prop-types'
-
 import { useState } from 'react';
 const Galeria = (props) => {
   

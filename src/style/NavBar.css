@@ -7,7 +7,6 @@
 .navBarLinks a{
     color: var(--light-text-color);
 }
-/*ARREGLAR ESTO!!!!!!!!!!*/
 .item::after{
     position: relative;
     left: 0;
@@ -28,7 +27,7 @@
     list-style: none;
     margin: 10px;
     cursor: pointer;
-    height: 20px;
+    font-size: 1.1em;
 }
 nav{
     background-color: var(--dark-bg-color);
@@ -50,7 +49,6 @@ nav{
 }
 
 .logoNavBar{
-    
     height: inherit;
     margin-right: 30px;
 }
@@ -177,7 +175,7 @@ nav{
     }
     .navBarLinks li{
         
-        font-size:3vh;
+        font-size:3em;
         margin: 20px;
     }
     .navbarLinks li::after,.navbarLinks ul a::after{

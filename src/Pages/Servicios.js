@@ -6,7 +6,6 @@ import { useLocation } from "react-router-dom";
 
 const Servicios=()=> {
     const info = useLocation();
-    console.log(info.state.subservicios)
 
         return (
             

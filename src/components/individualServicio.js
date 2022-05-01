@@ -6,7 +6,7 @@ import Galeria from './galería';
 const IndividualServicio = () => {
     const [showMore, setShowMore] = useState(false);
     const info = useLocation();
-    const paragraphh = useRef(  )
+    const paragraphh = useRef()
    
     return (
         <div id='pageWrapper'>
@@ -36,7 +36,7 @@ const IndividualServicio = () => {
 }
 function separador(descripcion) {
 
-    return descripcion.split('.').join("." + "\n");
+    return descripcion.split('.').join(". \n");
 
 }
 export default IndividualServicio
