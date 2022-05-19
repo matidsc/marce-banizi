@@ -18,7 +18,7 @@ const IndividualServicio = () => {
                     {typeof info.state.precio != 'undefined' ? <h3>${info.state.precio}</h3> : null}
                     <h2>En qué consiste? </h2>
                     <div ref={paragraphh}className={showMore ? 'paragraph' : 'paragraph infoHide'}>
-                        <p>{separador(info.state.descripcion)}</p>
+                        <p>{(info.state.descripcion)}</p>
                     </div>
                     <button onClick={() => {setShowMore(!showMore);paragraphh.current.scrollTop=0 }} className="showMore">{ showMore? "Mostrar menos": "Mostrar más"}</button>
 
@@ -32,11 +32,6 @@ const IndividualServicio = () => {
             </div>
         </div>
     )
-
-}
-function separador(descripcion) {
-
-    return descripcion.split('.').join(". \n");
 
 }
 export default IndividualServicio

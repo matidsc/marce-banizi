@@ -26,8 +26,8 @@ const App = () => {
 
         <Switch>
           <Route path='/servicio' component={IndividualServicio} />
-          <Fragment>
-
+          
+<Fragment>
             <Route path='/subservicios' component={Servicios} />
             <Route path='/productos' component={Productos} />
             <Route path='/portafolio' component={Portafolio} />
@@ -35,8 +35,9 @@ const App = () => {
             <Route path='/' exact component={Home} />
             <Footer />
 
-
-          </Fragment>
+            </Fragment>
+    
+          
 
         </Switch>
       </div>
