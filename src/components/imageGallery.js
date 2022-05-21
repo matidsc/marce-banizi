@@ -12,7 +12,7 @@ const ImageGallery = (props) => {
         <div className='GalleryWrapper'>
 
             <ResponsiveMasonry className='images'
-                columnsCountBreakPoints={{ 350: 1, 750: 2, 900:4}}
+                columnsCountBreakPoints={{ 350: 1, 500: 2, 900:4}}
             >
                 <Masonry gutter={3}
 >

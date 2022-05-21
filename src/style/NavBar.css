@@ -65,6 +65,8 @@ nav{
     height: auto;
     justify-content: center;
     border: 2px solid black;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
     
 }
 #subshow li{
@@ -128,9 +130,10 @@ nav{
         color: wheat;
         height: 12vh;
         width: 100%;
-
     }
    nav #show {
+    overflow: hidden;
+
         flex-direction: column;
         row-gap: 30px;
         justify-content: center;
