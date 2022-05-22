@@ -1,21 +1,31 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import '../style/Servicios.css'
 import Servicio from '../components/servicio'
 import MainTitle from '../components/mainTitle'
-import { useLocation } from "react-router-dom";
+import { useParams } from 'react-router-dom'
 
 const Servicios=()=> {
-    const info = useLocation();
+    const [servicios,setServicios]=useState()
+
+    const {idServicios}=useParams()
+    console.log(idServicios)
+
+    useEffect(() => {
+        fetch(`https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/servicios/${idServicios}/subservicios`)
+          .then((res) => res.json())
+          .then((result) => setServicios(result));
+      }, [idServicios]);
 
         return (
             
             <main id='pageWrapper'>
                 <div className='serviciosWrapper'>
-                    <MainTitle title={info.state.servicio}/>
+                    <MainTitle title={"Servicios"}/>
                     
-                    {info.state.subservicios.map((subservicio,index) => 
+                    {servicios?.map((subservicio,index) => 
                         <Servicio key={index} 
-                        servicio={subservicio.nombre}imagenes={subservicio.imagenes} precio={subservicio.precio} descripcion={subservicio.descripcion} subservicios={[]}
+                        id={subservicio.id}
+                        servicio={subservicio.nom}imagenes={subservicio.imgs} precio={subservicio.precio} descripcion={subservicio.descripcion} subservicios={[]}
                     />)}        
                     
                 </div>

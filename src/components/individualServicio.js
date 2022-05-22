@@ -1,37 +1,63 @@
-import React, { useState,useRef} from 'react'
-import { useLocation } from "react-router-dom";
-import '../style/ServicioIndividual.css'
+import React, { useState, useRef, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import "../style/ServicioIndividual.css";
 import { AiOutlineWhatsApp } from "react-icons/ai";
-import Galeria from './galería';
+import Galeria from "./galería";
 const IndividualServicio = () => {
-    const [showMore, setShowMore] = useState(false);
-    const info = useLocation();
-    const paragraphh = useRef()
-   
-    return (
-        <div id='pageWrapper'>
-            <div className='wrapperIndividualServicio'>
-                <Galeria ruta="Servicios/" imageList={info.state.imageList} />
+  const [showMore, setShowMore] = useState(false);
+  const paragraphh = useRef();
+  const [servicio, setServicio] = useState({});
+  const { id } = useParams();
 
-                <div className='wrapperDetallesServicio'>
-                    <h1>{info.state.nombre}</h1>
-                    {typeof info.state.precio != 'undefined' ? <h3>${info.state.precio}</h3> : null}
-                    <h2>En qué consiste? </h2>
-                    <div ref={paragraphh}className={showMore ? 'paragraph' : 'paragraph infoHide'}>
-                        <p>{(info.state.descripcion)}</p>
-                    </div>
-                    <button onClick={() => {setShowMore(!showMore);paragraphh.current.scrollTop=0 }} className="showMore">{ showMore? "Mostrar menos": "Mostrar más"}</button>
-
-                   <a rel='noreferrer' target='_blank' href={'https://wa.me/59895457744/?text=Hola, quisiera consultarte sobre el servicio de '+info.state.nombre}><button  className='btnFlotante'>
-                        <AiOutlineWhatsApp size="40" className='iconFooter' />
-                        Consultame sobre el servicio
-                    </button> </a> 
-
-                </div>
-
-            </div>
-        </div>
+  useEffect(() => {
+    fetch(
+      `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/subservicios/${id}`
     )
+      .then((res) => res.json())
+      .then((result) => setServicio(result));
+  }, [id]);
 
-}
-export default IndividualServicio
+  return (
+    <div id="pageWrapper">
+      <div className="wrapperIndividualServicio">
+        <Galeria ruta="Servicios/" imageList={servicio.imgs} />
+
+        <div className="wrapperDetallesServicio">
+          <h1>{servicio.nom}</h1>
+          {typeof servicio.p != "undefined" && <h3>${servicio.p}</h3> }
+          <h2>En qué consiste? </h2>
+          <div
+            ref={paragraphh}
+            className={showMore ? "paragraph" : "paragraph infoHide"}
+          >
+            <p>{servicio.desc}</p>
+          </div>
+          <button
+            onClick={() => {
+              setShowMore(!showMore);
+              paragraphh.current.scrollTop = 0;
+            }}
+            className="showMore"
+          >
+            {showMore ? "Mostrar menos" : "Mostrar más"}
+          </button>
+
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href={
+              "https://wa.me/59895457744/?text=Hola, quisiera consultarte sobre el servicio de " +
+              servicio.nom
+            }
+          >
+            <button className="btnFlotante">
+              <AiOutlineWhatsApp size="40" className="iconFooter" />
+              Consultame sobre el servicio
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default IndividualServicio;

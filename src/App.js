@@ -25,10 +25,10 @@ const App = () => {
       <div className='App'>
 
         <Switch>
-          <Route path='/servicio' component={IndividualServicio} />
+          <Route path='/servicio/:id' component={IndividualServicio} />
           
-<Fragment>
-            <Route path='/subservicios' component={Servicios} />
+          <Fragment>
+            <Route path='/servicios/:idServicios' component={Servicios} />
             <Route path='/productos' component={Productos} />
             <Route path='/portafolio' component={Portafolio} />
 

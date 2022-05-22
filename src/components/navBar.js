@@ -5,14 +5,22 @@ import { Link } from "react-router-dom";
 import { showServices, showNavBar } from "../redux/navState";
 import { useDispatch, useSelector } from "react-redux";
 import ServiciosLista from "../JSON/servicios.json";
-
+import React, {useEffect,useState } from 'react';
 const NavBar = () => {
   const { varShow, varShowServices } = useSelector((state) => state.navState);
   const dispatch = useDispatch();
 
+  const [navItems, setNavItems] = useState();
+
   varShow && window.matchMedia("(max-width: 768px)").matches
     ? (document.body.style.overflowY = "hidden")
     : (document.body.style.overflowY = "scroll");
+  
+    useEffect(() => {
+    fetch("https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/servicios")
+      .then((res) => res.json())
+      .then((result) => setNavItems(result));
+  }, []);
 
   return (
     <>
@@ -42,26 +50,17 @@ const NavBar = () => {
                 Servicios
               </li>
               <ul id={varShowServices ? "subshow" : "subhidden"}>
-                {ServiciosLista.map((servicio) => (
+                {navItems?.map((servicio) => (
                   <li key={servicio.id}>
                     <Link
                       to={
-                        servicio.hasOwnProperty("Subservicios")
-                          ? {
-                              pathname: "/subservicios",
-                              state: {
-                                servicio: servicio.Servicio,
-                                subservicios: servicio.Subservicios,
-                              },
-                            }
+                        servicio.hasOwnProperty("desc")
+                          ? 
+                            `/servicio/${servicio.id}`
+                            
                           : {
-                              pathname: "/servicio",
-                              state: {
-                                nombre: servicio.Servicio,
-                                imageList: servicio.imagenes,
-                                precio: servicio.Precio,
-                                descripcion: servicio.Descripcion,
-                              },
+                              pathname: `/servicios/${servicio.id}`
+                             
                             }
                       }
                       onClick={() => {
@@ -69,7 +68,7 @@ const NavBar = () => {
                         dispatch(showNavBar());
                       }}
                     >
-                      {servicio.Servicio}
+                      {servicio.nom}
                     </Link>
                   </li>
                 ))}

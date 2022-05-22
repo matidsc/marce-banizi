@@ -1,7 +1,9 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import PropTypes from 'prop-types'
 import '../style/Servicio.css'
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom'
+
 const Servicio = (props) => {
    
     return (
@@ -10,17 +12,12 @@ const Servicio = (props) => {
 
             <img className='imgServicio' src={require("../img/Servicios/" + props.imagenes[0]).default} />
             <button className='btnMasInformacion'>
-            <Link style={{display:'block',color:'white'}}to={{
+            <Link style={{display:'block',color:'white'}}to={
                       
-                        pathname: `/servicio`,
-                        state: {
-                            nombre: props.servicio,
-                            imageList: props.imagenes,
-                            precio: props.precio,
-                            descripcion: props.descripcion
-                        }
+                         `/servicio/${props.id}`
+                       
 
-            }}>Más información</Link> </button>
+            }>Más información</Link> </button>
         </div>
 
     )
