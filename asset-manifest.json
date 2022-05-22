@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/marce-banizi/static/css/main.c9b29f07.chunk.css",
-    "main.js": "/marce-banizi/static/js/main.a8aaa299.chunk.js",
-    "main.js.map": "/marce-banizi/static/js/main.a8aaa299.chunk.js.map",
+    "main.js": "/marce-banizi/static/js/main.e66f573a.chunk.js",
+    "main.js.map": "/marce-banizi/static/js/main.e66f573a.chunk.js.map",
     "runtime-main.js": "/marce-banizi/static/js/runtime-main.270964c1.js",
     "runtime-main.js.map": "/marce-banizi/static/js/runtime-main.270964c1.js.map",
     "static/js/2.46251c16.chunk.js": "/marce-banizi/static/js/2.46251c16.chunk.js",
@@ -79,6 +79,6 @@
     "static/js/runtime-main.270964c1.js",
     "static/js/2.46251c16.chunk.js",
     "static/css/main.c9b29f07.chunk.css",
-    "static/js/main.a8aaa299.chunk.js"
+    "static/js/main.e66f573a.chunk.js"
   ]
 }
