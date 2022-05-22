@@ -42,7 +42,7 @@ const NavBar = () => {
         <div className="navBarLinks" id={varShow ? "show" : "hidden"}>
           <ul>
             <li onClick={() => dispatch(showNavBar())}>
-              <Link className="item" to="/">
+              <Link className="item" to="/marce-banizi">
                 Inicio
               </Link>
             </li>
@@ -76,7 +76,7 @@ const NavBar = () => {
               <Link
                 onClick={() => dispatch(showNavBar())}
                 className="item"
-                to="/portafolio"
+                to="/marce-banizi/portafolio"
               >
                 Portafolio
               </Link>
