@@ -14,7 +14,7 @@ const Servicio = (props) => {
             <button className='btnMasInformacion'>
             <Link style={{display:'block',color:'white'}}to={
                       
-                         `/servicio/${props.id}`
+                         `/marce-banizi/servicio/${props.id}`
                        
 
             }>Más información</Link> </button>

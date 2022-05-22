@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { showServices, showNavBar } from "../redux/navState";
 import { useDispatch, useSelector } from "react-redux";
 import ServiciosLista from "../JSON/servicios.json";
-import React, {useEffect,useState } from 'react';
+import React, { useEffect, useState } from "react";
 const NavBar = () => {
   const { varShow, varShowServices } = useSelector((state) => state.navState);
   const dispatch = useDispatch();
@@ -15,9 +15,11 @@ const NavBar = () => {
   varShow && window.matchMedia("(max-width: 768px)").matches
     ? (document.body.style.overflowY = "hidden")
     : (document.body.style.overflowY = "scroll");
-  
-    useEffect(() => {
-    fetch("https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/servicios")
+
+  useEffect(() => {
+    fetch(
+      "https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/servicios"
+    )
       .then((res) => res.json())
       .then((result) => setNavItems(result));
   }, []);
@@ -55,13 +57,8 @@ const NavBar = () => {
                     <Link
                       to={
                         servicio.hasOwnProperty("desc")
-                          ? 
-                            `/servicio/${servicio.id}`
-                            
-                          : {
-                              pathname: `/servicios/${servicio.id}`
-                             
-                            }
+                          ? `/marce-banizi/servicio/${servicio.id}`
+                          : `/marce-banizi/servicios/${servicio.id}`
                       }
                       onClick={() => {
                         dispatch(showServices());

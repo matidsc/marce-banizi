@@ -25,14 +25,14 @@ const App = () => {
       <div className='App'>
 
         <Switch>
-          <Route path='/servicio/:id' component={IndividualServicio} />
+          <Route path='/marce-banizi/servicio/:id' component={IndividualServicio} />
           
           <Fragment>
-            <Route path='/servicios/:idServicios' component={Servicios} />
-            <Route path='/productos' component={Productos} />
-            <Route path='/portafolio' component={Portafolio} />
+            <Route path='/marce-banizi/servicios/:idServicios' component={Servicios} />
+            <Route path='/marce-banizi/productos' component={Productos} />
+            <Route path='/marce-banizi/portafolio' component={Portafolio} />
 
-            <Route path='/' exact component={Home} />
+            <Route path='/marce-banizi' exact component={Home} />
             <Footer />
 
             </Fragment>
