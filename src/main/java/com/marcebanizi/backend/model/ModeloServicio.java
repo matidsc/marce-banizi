@@ -2,7 +2,6 @@ package com.marcebanizi.backend.model;
 
 import javax.persistence.*;
 import java.lang.String;
-import java.util.UUID;
 
 @Entity
 public class ModeloServicio {
@@ -11,11 +10,9 @@ public class ModeloServicio {
     private String nombre;
     private String descripcion;
     private long precio;
-
     public ModeloServicio(){
 
     }
-
     public ModeloServicio(long id, String nombre, String descripcion, long precio) {
        this.id = id;
        this.nombre = nombre;
@@ -57,7 +54,7 @@ public class ModeloServicio {
 
     @Override
     public String toString() {
-        return "Servicio{" +
+        return "ModeloServicio{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +

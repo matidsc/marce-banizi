@@ -4,13 +4,17 @@ import javax.persistence.*;
 import java.lang.String;
 
 @Entity
-public class ModeloSubServicio{
+public class ModeloSubServicio {
+
     @Id
     private long id;
     private String nombre;
     private String descripcion;
     private long precio;
 
+    public ModeloSubServicio(){
+
+    }
 
     public ModeloSubServicio(long id, String nombre, String descripcion, long precio) {
         this.id = id;
@@ -53,7 +57,7 @@ public class ModeloSubServicio{
 
     @Override
     public String toString() {
-        return "SubServicio{" +
+        return "ModeloSubServicio{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +

@@ -7,27 +7,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 @RestController
-
 @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 public class Controller {
     @Autowired
     private ServicioRest ServicioRest;
 
 
-    @GetMapping("/servicios")
+    @GetMapping("/servicios/{id}")
     @CrossOrigin
-    public @ResponseBody List<ModeloServicio> getServicios(){
-        return ServicioRest.getServicios();
+    public @ResponseBody ModeloServicio getServicios(@PathVariable Long id){
+        return ServicioRest.getServiciosId(id);
+
     }
 
-    @GetMapping("/subservicios")
+    @GetMapping("/subservicios/{id}")
     @CrossOrigin
-    public @ResponseBody List<ModeloSubServicio> getSubServicios(){
-        return ServicioRest.getSubServicios();
+    public @ResponseBody ModeloSubServicio getSubServicios(@PathVariable Long id){
+        return ServicioRest.getSubServiciosId(id);
+    }
+
+    @GetMapping("/servicios/subservicios/{id}")
+    @CrossOrigin
+    public @ResponseBody ModeloSubServicio getEndpointSubServicios(@PathVariable Long id){
+        return ServicioRest.getSubServiciosId(id);
     }
 
     @GetMapping("/test")
@@ -37,12 +41,5 @@ public class Controller {
         pageDataList.add("json value");
         pageDataList.add("json value");
       return pageDataList;
-    }
-
-    @GetMapping("/hello")
-    public Collection<String> sayHello() {
-        return IntStream.range(0, 10)
-                .mapToObj(i -> "Hello number " + i)
-                .collect(Collectors.toList());
     }
 }
