@@ -2,7 +2,6 @@ import React,{useEffect,useState} from 'react'
 import PropTypes from 'prop-types'
 import '../style/Servicio.css'
 import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom'
 
 const Servicio = (props) => {
    
@@ -14,7 +13,7 @@ const Servicio = (props) => {
             <button className='btnMasInformacion'>
             <Link style={{display:'block',color:'white'}}to={
                       
-                         `/marce-banizi/servicio/${props.id}`
+                         `/marce-banizi/servicios/subservicio/${props.id}`
                        
 
             }>Más información</Link> </button>

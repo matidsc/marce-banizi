@@ -7,17 +7,19 @@ const IndividualServicio = () => {
   const [showMore, setShowMore] = useState(false);
   const paragraphh = useRef();
   const [servicio, setServicio] = useState({});
-  const { id } = useParams();
+  const { idServicio,idSubservicio } = useParams();
 
   useEffect(() => {
     fetch(
-      `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/subservicios/${id}`
+      idSubservicio?`https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/subservicios/${idSubservicio}`:
+      `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/servicios/${idServicio}`
     )
       .then((res) => res.json())
       .then((result) => setServicio(result));
-  }, [id]);
+  }, [idServicio,idSubservicio]);
 
   return (
+    
     <div id="pageWrapper">
       <div className="wrapperIndividualServicio">
         <Galeria ruta="Servicios/" imageList={servicio.imgs} />

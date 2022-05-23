@@ -14,7 +14,7 @@ const NavBar = () => {
 
   varShow && window.matchMedia("(max-width: 768px)").matches
     ? (document.body.style.overflowY = "hidden")
-    : (document.body.style.overflowY = "scroll");
+    : (document.body.style.overflowY = "auto");
 
   useEffect(() => {
     fetch(

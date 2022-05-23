@@ -25,7 +25,8 @@ const App = () => {
       <div className='App'>
 
         <Switch>
-          <Route path='/marce-banizi/servicio/:id' component={IndividualServicio} />
+          <Route path='/marce-banizi/servicio/:idServicio' component={IndividualServicio} />
+          <Route path='/marce-banizi/servicios/subservicio/:idSubservicio' component={IndividualServicio} />
           
           <Fragment>
             <Route path='/marce-banizi/servicios/:idServicios' component={Servicios} />
