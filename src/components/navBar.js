@@ -4,7 +4,6 @@ import { HiMenuAlt1 } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { showServices, showNavBar } from "../redux/navState";
 import { useDispatch, useSelector } from "react-redux";
-import ServiciosLista from "../JSON/servicios.json";
 import React, { useEffect, useState } from "react";
 const NavBar = () => {
   const { varShow, varShowServices } = useSelector((state) => state.navState);

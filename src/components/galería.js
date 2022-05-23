@@ -3,11 +3,9 @@ import '../style/Galeria.css'
 import { IoIosArrowBack,IoIosArrowForward } from "react-icons/io";
 import PropTypes from 'prop-types'
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
 const Galeria = (props) => {
     const [actual, setActual] = useState(0)
-    const{id}=useParams()
-
+console.log(props.imageList)
 
     const nextImg = () => {
         setActual(actual == props.imageList.length - 1 ? 0 : actual + 1)
