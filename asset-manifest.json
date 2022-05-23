@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/marce-banizi/static/css/main.c9b29f07.chunk.css",
-    "main.js": "/marce-banizi/static/js/main.05473792.chunk.js",
-    "main.js.map": "/marce-banizi/static/js/main.05473792.chunk.js.map",
+    "main.js": "/marce-banizi/static/js/main.82e22405.chunk.js",
+    "main.js.map": "/marce-banizi/static/js/main.82e22405.chunk.js.map",
     "runtime-main.js": "/marce-banizi/static/js/runtime-main.270964c1.js",
     "runtime-main.js.map": "/marce-banizi/static/js/runtime-main.270964c1.js.map",
-    "static/js/2.46251c16.chunk.js": "/marce-banizi/static/js/2.46251c16.chunk.js",
-    "static/js/2.46251c16.chunk.js.map": "/marce-banizi/static/js/2.46251c16.chunk.js.map",
+    "static/js/2.96febbda.chunk.js": "/marce-banizi/static/js/2.96febbda.chunk.js",
+    "static/js/2.96febbda.chunk.js.map": "/marce-banizi/static/js/2.96febbda.chunk.js.map",
     "static/js/3.36148602.chunk.js": "/marce-banizi/static/js/3.36148602.chunk.js",
     "static/js/3.36148602.chunk.js.map": "/marce-banizi/static/js/3.36148602.chunk.js.map",
     "index.html": "/marce-banizi/index.html",
     "static/css/main.c9b29f07.chunk.css.map": "/marce-banizi/static/css/main.c9b29f07.chunk.css.map",
-    "static/js/2.46251c16.chunk.js.LICENSE.txt": "/marce-banizi/static/js/2.46251c16.chunk.js.LICENSE.txt",
+    "static/js/2.96febbda.chunk.js.LICENSE.txt": "/marce-banizi/static/js/2.96febbda.chunk.js.LICENSE.txt",
     "static/media/0.jpg": "/marce-banizi/static/media/0.ac0c299b.jpg",
     "static/media/1.jpg": "/marce-banizi/static/media/1.a7938c4d.jpg",
     "static/media/10.jpg": "/marce-banizi/static/media/10.6b0eef02.jpg",
@@ -77,8 +77,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.270964c1.js",
-    "static/js/2.46251c16.chunk.js",
+    "static/js/2.96febbda.chunk.js",
     "static/css/main.c9b29f07.chunk.css",
-    "static/js/main.05473792.chunk.js"
+    "static/js/main.82e22405.chunk.js"
   ]
 }
