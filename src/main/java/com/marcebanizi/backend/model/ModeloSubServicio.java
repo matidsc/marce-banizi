@@ -1,29 +1,29 @@
-package com.marce_banizi.backend.modelo;
+package com.marcebanizi.backend.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.lang.String;
-import java.util.UUID;
 
 @Entity
-public class Servicio {
+public class ModeloSubServicio{
     @Id
-    private UUID id;
-    private String nombre, descripcion;
-    private int precio;
+    private long id;
+    private String nombre;
+    private String descripcion;
+    private long precio;
 
-    public Servicio(UUID id, String nombre, String descripcion, int precio) {
-       this.id = id;
-       this.nombre = nombre;
-       this.descripcion = descripcion;
-       this.precio = precio;
+
+    public ModeloSubServicio(long id, String nombre, String descripcion, long precio) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
     }
 
-    public UUID getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -43,7 +43,7 @@ public class Servicio {
         this.descripcion = descripcion;
     }
 
-    public int getPrecio() {
+    public long getPrecio() {
         return precio;
     }
 
@@ -53,7 +53,7 @@ public class Servicio {
 
     @Override
     public String toString() {
-        return "Servicio{" +
+        return "SubServicio{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +

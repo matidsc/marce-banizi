@@ -1,10 +1,10 @@
-package com.marce_banizi.backend;
+package com.marcebanizi.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class banizi_backTests {
+class MarceBaniziBackendApplicationTests {
 
 	@Test
 	void contextLoads() {
