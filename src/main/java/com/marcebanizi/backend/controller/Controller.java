@@ -6,6 +6,7 @@ import com.marcebanizi.backend.service.ServicioRest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
 @RestController
@@ -36,10 +37,28 @@ public class Controller {
 
     @GetMapping("/test")
     @CrossOrigin
-    public @ResponseBody ArrayList<String> about(){
+    public @ResponseBody ArrayList<String> test(){
+        List<ModeloServicio> serviciosTest = ServicioRest.getServicios();
+        List<ModeloSubServicio> subserviciosTest = ServicioRest.getSubServicios();
+        System.out.println();
         ArrayList<String> pageDataList = new ArrayList<>();
-        pageDataList.add("json value");
-        pageDataList.add("json value");
+        pageDataList.add("BackendTest - Debug Only");
+        pageDataList.add(ServicioRest.getUrlErrorMapping());
+        for (ModeloServicio i : serviciosTest){
+            pageDataList.add(i.toString());
+            
+        }
+        for (ModeloSubServicio i : subserviciosTest){
+            pageDataList.add(i.toString());
+        }
       return pageDataList;
     }
+    
+    @GetMapping("/")
+    @CrossOrigin
+    public void method(HttpServletResponse httpServletResponse) {
+        httpServletResponse.setHeader("Location", ServicioRest.getUrlErrorMapping());
+        httpServletResponse.setStatus(302);
+    }
+
 }

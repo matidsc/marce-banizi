@@ -1,6 +1,7 @@
 package com.marcebanizi.backend.service;
 
 import com.marcebanizi.backend.model.ModeloServicio;
+import com.marcebanizi.backend.repository.AppRepo;
 import com.marcebanizi.backend.repository.ModeloServicioRepo;
 import com.marcebanizi.backend.model.ModeloSubServicio;
 import com.marcebanizi.backend.repository.ModeloSubServicioRepo;
@@ -13,6 +14,8 @@ import java.util.List;
 @Transactional
 public class ServicioRest {
 
+    @Autowired
+    private AppRepo AppRepo;
     @Autowired
     private ModeloServicioRepo ModeloServicioRepo;
     @Autowired
@@ -40,5 +43,9 @@ public class ServicioRest {
 
     public List<Byte> getImgSubServicios(){
         return ModeloSubServicioRepo.getImgSubServicios();
+    }
+
+    public String getUrlErrorMapping(){
+        return AppRepo.getHomeUrl();
     }
 }

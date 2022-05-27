@@ -5,14 +5,17 @@ import java.lang.String;
 
 @Entity
 public class ModeloServicio {
+    
     @Id
     private long id;
     private String nombre;
     private String descripcion;
     private long precio;
+
     public ModeloServicio(){
 
     }
+
     public ModeloServicio(long id, String nombre, String descripcion, long precio) {
        this.id = id;
        this.nombre = nombre;
