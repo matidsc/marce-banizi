@@ -7,26 +7,26 @@ const IndividualServicio = () => {
   const [showMore, setShowMore] = useState(false);
   const paragraphh = useRef();
   const [servicio, setServicio] = useState({});
-  const { idServicio,idSubservicio } = useParams();
+  const { idServicio, idSubservicio } = useParams();
 
   useEffect(() => {
     fetch(
-      idSubservicio?`https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/subservicios/${idSubservicio}`:
-      `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/servicios/${idServicio}`
+      idSubservicio
+        ? `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/subservicios/${idSubservicio}`
+        : `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/servicios/${idServicio}`
     )
       .then((res) => res.json())
       .then((result) => setServicio(result));
-  }, [idServicio,idSubservicio]);
+  }, [idServicio, idSubservicio]);
 
   return (
-    
     <div id="pageWrapper">
       <div className="wrapperIndividualServicio">
         <Galeria ruta="Servicios/" imageList={servicio.imgs} />
 
         <div className="wrapperDetallesServicio">
           <h1>{servicio.nom}</h1>
-          {typeof servicio.p != "undefined" && <h3>${servicio.p}</h3> }
+          {typeof servicio.p != "undefined" && <h3>${servicio.p}</h3>}
           <h2>En qué consiste? </h2>
           <div
             ref={paragraphh}
