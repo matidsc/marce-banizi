@@ -38,7 +38,7 @@
 		id MEDIUMINT NOT NULL,
 		url MEDIUMTEXT,	
 		PRIMARY KEY (idi, id),
-		CONSTRAINT fk_img_subservicio_cat_bck_id FOREIGN KEY (id) REFERENCES subservicio_cat_bck (idi)
+		CONSTRAINT fk_img_subservicio_cat_bck_id FOREIGN KEY (id) REFERENCES subservicio_cat_bck (ids)
 	) ENGINE = InnoDB DEFAULT CHARSET = UTF8; 
 
 	CREATE TABLE app_urls (
