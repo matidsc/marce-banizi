@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import '../style/Servicio.css'
 import { Link } from 'react-router-dom';
