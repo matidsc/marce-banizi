@@ -37,7 +37,7 @@ const NavBar = () => {
           className="hamburger"
           onClick={() => dispatch(showNavBar())}
         />
-        <img src={logo} className="logoNavBar" />
+        <img  src={logo} className="logoNavBar" />
         <div className="navBarLinks" id={varShow ? "show" : "hidden"}>
           <ul>
             <li onClick={() => dispatch(showNavBar())}>
