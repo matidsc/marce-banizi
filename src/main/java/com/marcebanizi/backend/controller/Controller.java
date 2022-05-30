@@ -1,5 +1,6 @@
 package com.marcebanizi.backend.controller;
 
+import com.marcebanizi.backend.model.ModeloImagen;
 import com.marcebanizi.backend.model.ModeloServicio;
 import com.marcebanizi.backend.model.ModeloServicioNavbar;
 import com.marcebanizi.backend.model.ModeloSubServicio;
@@ -22,6 +23,12 @@ public class Controller {
         return ServicioRest.getServiciosId(id);
     }
 
+    @GetMapping("/servicios/{id}/subservicios")
+    @CrossOrigin
+    public @ResponseBody List<ModeloSubServicio> getSubServiciosSegunServicio(@PathVariable Long id){
+        return ServicioRest.getSubServiciosSegunServicio(id);
+    }
+
     @GetMapping("/serviciosnavbar")
     @CrossOrigin
     public @ResponseBody List<ModeloServicioNavbar> getServiciosNavbar(){
@@ -41,7 +48,19 @@ public class Controller {
         return ServicioRest.getSubServiciosId(id);
     }
 
-    @GetMapping("/test")
+    @GetMapping("/servicios/{id}/imagenes")
+    @CrossOrigin
+    public @ResponseBody List<ModeloImagen> getImagenesPorServicios(@PathVariable Long id){
+        return ServicioRest.getImgServicioId(id);
+    }
+
+    @GetMapping("/servicios/subservicios/{id}/imagenes")
+    @CrossOrigin
+    public @ResponseBody List<ModeloImagen> getImagenesPorSubServicios(@PathVariable Long id){
+        return ServicioRest.getImgSubServicioId(id);
+    }
+
+    /*@GetMapping("/test")
     @CrossOrigin
     public @ResponseBody ArrayList<String> test(){
         List<ModeloServicio> serviciosTest = ServicioRest.getServicios();
@@ -58,7 +77,7 @@ public class Controller {
             pageDataList.add(i.toString());
         }
       return pageDataList;
-    }
+    }*/
     
     @GetMapping("/")
     @CrossOrigin

@@ -7,6 +7,7 @@ import java.lang.String;
 public class ModeloSubServicio {
 
     @Id
+    private long ids;
     private long id;
     private String nombre;
     private String descripcion;

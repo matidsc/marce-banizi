@@ -1,7 +1,6 @@
 package com.marcebanizi.backend.repository;
 
 import com.marcebanizi.backend.model.ModeloServicio;
-import com.marcebanizi.backend.model.ModeloServicioNavbar;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,8 +15,4 @@ public interface ModeloServicioRepo extends JpaRepository<ModeloServicio, Intege
            value="select id, nombre, descripcion, precio from servicio_cat_bck where id = ?1",
            nativeQuery = true)
    ModeloServicio getServiciosId(Long id);
-   @Query(
-           value = "select * from img_servicio_cat_bck",
-           nativeQuery = true)
-   List<Byte> getImgServicios();
 }

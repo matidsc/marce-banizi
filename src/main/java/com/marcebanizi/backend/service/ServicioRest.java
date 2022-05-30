@@ -1,8 +1,10 @@
 package com.marcebanizi.backend.service;
 
+import com.marcebanizi.backend.model.ModeloImagen;
 import com.marcebanizi.backend.model.ModeloServicio;
 import com.marcebanizi.backend.model.ModeloServicioNavbar;
 import com.marcebanizi.backend.repository.AppRepo;
+import com.marcebanizi.backend.repository.ModeloImgRepo;
 import com.marcebanizi.backend.repository.ModeloServicioNavbarRepo;
 import com.marcebanizi.backend.repository.ModeloServicioRepo;
 import com.marcebanizi.backend.model.ModeloSubServicio;
@@ -24,6 +26,9 @@ public class ServicioRest {
     private ModeloSubServicioRepo ModeloSubServicioRepo;
     @Autowired
     private ModeloServicioNavbarRepo ModeloServicioNavbarRepo;
+    @Autowired
+    private ModeloImgRepo ModeloImgRepo;
+
 
     public List<ModeloServicio> getServicios(){
         return ModeloServicioRepo.getServicios();
@@ -33,6 +38,9 @@ public class ServicioRest {
         return ModeloSubServicioRepo.getSubServicios();
     }
 
+    public List<ModeloSubServicio> getSubServiciosSegunServicio(Long id){
+        return ModeloSubServicioRepo.getSubServiciosSegunServicio(id);
+    }
     public List<ModeloServicioNavbar> getServiciosNavbar(){
         return ModeloServicioNavbarRepo.getServiciosNavbar();
     }
@@ -45,12 +53,20 @@ public class ServicioRest {
         return ModeloSubServicioRepo.getSubServiciosId(id);
     }
 
-    public List<Byte> getImgServicios(){
-        return ModeloServicioRepo.getImgServicios();
+    public List<ModeloImagen> getImgServicio(){
+        return ModeloImgRepo.getImgServicio();
     }
 
-    public List<Byte> getImgSubServicios(){
-        return ModeloSubServicioRepo.getImgSubServicios();
+    public List<ModeloImagen> getImgServicioId(Long id){
+        return ModeloImgRepo.getImgServicioId(id);
+    }
+
+    public List<ModeloImagen> getImgSubServicio(){
+        return ModeloImgRepo.getImgSubServicio();
+    }
+
+    public List<ModeloImagen> getImgSubServicioId(Long id){
+        return ModeloImgRepo.getImgSubServicioId(id);
     }
 
     public String getUrlErrorMapping(){
