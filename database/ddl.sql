@@ -49,8 +49,8 @@
 		) ENGINE = InnoDB DEFAULT CHARSET = UTF8; 
     /* Fin de tablas */
 	/* Creación de vistas */
-		CREATE VIEW servicios_navbar as (
-			select servicio_cat_bck.id, servicio_cat_bck.nombre, 
+		CREATE VIEW serviciosNavbar as (
+			select distinct servicio_cat_bck.id, servicio_cat_bck.nombre, 
 			if(subservicio_cat_bck.id is not null,'1','0') as tienesubservicio 
 			From servicio_cat_bck left join subservicio_cat_bck on servicio_cat_bck.id = subservicio_cat_bck.id
 		);
