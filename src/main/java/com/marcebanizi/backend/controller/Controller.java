@@ -1,6 +1,7 @@
 package com.marcebanizi.backend.controller;
 
 import com.marcebanizi.backend.model.ModeloServicio;
+import com.marcebanizi.backend.model.ModeloServicioNavbar;
 import com.marcebanizi.backend.model.ModeloSubServicio;
 import com.marcebanizi.backend.service.ServicioRest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,16 @@ public class Controller {
     @Autowired
     private ServicioRest ServicioRest;
 
-
     @GetMapping("/servicios/{id}")
     @CrossOrigin
     public @ResponseBody ModeloServicio getServicios(@PathVariable Long id){
         return ServicioRest.getServiciosId(id);
+    }
+
+    @GetMapping("/serviciosnavbar")
+    @CrossOrigin
+    public @ResponseBody List<ModeloServicioNavbar> getServiciosNavbar(){
+        return ServicioRest.getServiciosNavbar();
 
     }
 

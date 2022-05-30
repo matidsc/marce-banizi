@@ -1,7 +1,9 @@
 package com.marcebanizi.backend.service;
 
 import com.marcebanizi.backend.model.ModeloServicio;
+import com.marcebanizi.backend.model.ModeloServicioNavbar;
 import com.marcebanizi.backend.repository.AppRepo;
+import com.marcebanizi.backend.repository.ModeloServicioNavbarRepo;
 import com.marcebanizi.backend.repository.ModeloServicioRepo;
 import com.marcebanizi.backend.model.ModeloSubServicio;
 import com.marcebanizi.backend.repository.ModeloSubServicioRepo;
@@ -20,6 +22,8 @@ public class ServicioRest {
     private ModeloServicioRepo ModeloServicioRepo;
     @Autowired
     private ModeloSubServicioRepo ModeloSubServicioRepo;
+    @Autowired
+    private ModeloServicioNavbarRepo ModeloServicioNavbarRepo;
 
     public List<ModeloServicio> getServicios(){
         return ModeloServicioRepo.getServicios();
@@ -27,6 +31,10 @@ public class ServicioRest {
 
     public List<ModeloSubServicio> getSubServicios(){
         return ModeloSubServicioRepo.getSubServicios();
+    }
+
+    public List<ModeloServicioNavbar> getServiciosNavbar(){
+        return ModeloServicioNavbarRepo.getServiciosNavbar();
     }
 
     public ModeloServicio getServiciosId(Long id){
