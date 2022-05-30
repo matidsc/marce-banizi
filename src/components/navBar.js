@@ -17,7 +17,7 @@ const NavBar = () => {
 
   useEffect(() => {
     fetch(
-      "https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/servicios"
+      "https://api.marcebaniziestudio.com/serviciosnavbar"
     )
       .then((res) => res.json())
       .then((result) => setNavItems(result));
@@ -55,7 +55,7 @@ const NavBar = () => {
                   <li key={servicio.id}>
                     <Link
                       to={
-                        servicio.hasOwnProperty("desc")
+                        servicio.tieneSubServicio==="0"
                           ? `/marce-banizi/servicio/${servicio.id}`
                           : `/marce-banizi/servicios/${servicio.id}`
                       }
@@ -64,7 +64,7 @@ const NavBar = () => {
                         dispatch(showNavBar());
                       }}
                     >
-                      {servicio.nom}
+                      {servicio.nombre}
                     </Link>
                   </li>
                 ))}

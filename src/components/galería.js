@@ -22,7 +22,7 @@ console.log(props.imageList)
                     return (
                         <div key={index} className={index === actual ? 'imgActiva' : 'slide'}>
                             
-                            {index === actual && <img key={index} className='imgMain' src={require("../img/"+props.ruta+img).default} />
+                            {index === actual && <img key={index} className='imgMain' src={img.url} />
                             
                             }
                         </div>

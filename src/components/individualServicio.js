@@ -8,31 +8,38 @@ const IndividualServicio = () => {
   const paragraphh = useRef();
   const [servicio, setServicio] = useState({});
   const { idServicio, idSubservicio } = useParams();
-
+  const [imagenes,setImagenes]=useState([])
   useEffect(() => {
     fetch(
       idSubservicio
-        ? `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/subservicios/${idSubservicio}`
-        : `https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/servicios/${idServicio}`
+        ? `https://api.marcebaniziestudio.com/servicios/subservicios/${idSubservicio}`
+        : `https://api.marcebaniziestudio.com/servicios/${idServicio}`
     )
       .then((res) => res.json())
       .then((result) => setServicio(result));
+      fetch(
+        idSubservicio
+          ? `https://api.marcebaniziestudio.com/servicios/subservicios/${idSubservicio}/imagenes`
+          : `https://api.marcebaniziestudio.com/servicios/${idServicio}/imagenes`
+      )
+        .then((imgs) => imgs.json())
+        .then((imagenes) => setImagenes(imagenes));
   }, [idServicio, idSubservicio]);
 
   return (
     <div id="pageWrapper">
       <div className="wrapperIndividualServicio">
-        <Galeria ruta="Servicios/" imageList={servicio.imgs} />
+      <Galeria imageList={imagenes} />
 
         <div className="wrapperDetallesServicio">
-          <h1>{servicio.nom}</h1>
-          {typeof servicio.p != "undefined" && <h3>${servicio.p}</h3>}
+          <h1>{servicio.nombre}</h1>
+          {servicio.precio !==0 && <h3>${servicio.precio}</h3>}
           <h2>En qué consiste? </h2>
           <div
             ref={paragraphh}
             className={showMore ? "paragraph" : "paragraph infoHide"}
           >
-            <p>{servicio.desc}</p>
+            <p>{separador(servicio.descripcion)}</p>
           </div>
           <button
             onClick={() => {
@@ -62,4 +69,9 @@ const IndividualServicio = () => {
     </div>
   );
 };
+function separador(descripcion) {
+
+  return descripcion.split('.').join("."+"\n");
+
+}
 export default IndividualServicio;

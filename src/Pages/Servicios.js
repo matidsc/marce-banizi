@@ -6,16 +6,20 @@ import { useParams } from 'react-router-dom'
 
 const Servicios=()=> {
     const [servicios,setServicios]=useState()
+    const [imagenes,setImagenes]=useState()
 
     const {idServicios}=useParams()
     console.log(idServicios)
 
     useEffect(() => {
-        fetch(`https://my-json-server.typicode.com/matidsc/SampleJSONPlaceholder/servicios/${idServicios}/subservicios`)
+        fetch(`https://api.marcebaniziestudio.com/servicios/${idServicios}/subservicios/`)
           .then((res) => res.json())
           .then((result) => setServicios(result));
+          fetch(`https://api.marcebaniziestudio.com/servicios/subservicios/${idServicios}/imagenes`)
+          .then((imgs) => imgs.json())
+          .then((images) => setImagenes(images[0].url));
       }, [idServicios]);
-
+console.log(imagenes)
         return (
             
             <main id='pageWrapper'>
@@ -25,7 +29,8 @@ const Servicios=()=> {
                     {servicios?.map((subservicio,index) => 
                         <Servicio key={index} 
                         id={subservicio.id}
-                        servicio={subservicio.nom}imagenes={subservicio.imgs} precio={subservicio.precio} descripcion={subservicio.descripcion} subservicios={[]}
+                        imagen={imagenes}
+                        servicio={subservicio.nombre}precio={subservicio.precio} descripcion={subservicio.descripcion}
                     />)}        
                     
                 </div>
