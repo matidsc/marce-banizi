@@ -23,7 +23,7 @@ public interface ModeloImgRepo extends JpaRepository<ModeloImagen, Integer> {
            nativeQuery = true)
    List<ModeloImagen> getImgSubServicio();
    @Query(
-           value = "select idi, id, url from img_subservicio_cat_bck where id = ?1",
+           value = "select idi, id, url from img_subservicio_cat_bck where id = ?1", //revisar a futuro si es idi en el where
            nativeQuery = true)
    List<ModeloImagen> getImgSubServicioId(Long id);
 }

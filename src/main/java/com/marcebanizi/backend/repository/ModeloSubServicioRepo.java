@@ -12,11 +12,11 @@ public interface ModeloSubServicioRepo extends JpaRepository<ModeloSubServicio, 
            nativeQuery = true)
    List<ModeloSubServicio> getSubServicios();
    @Query(
-           value = "select ids, id, nombre, descripcion, precio from subservicio_cat_bck where id = ?1",
+           value = "select ids, id, nombre, descripcion, precio from subservicio_cat_bck where ids = ?1",
            nativeQuery = true)
    ModeloSubServicio getSubServiciosId(Long id);
    @Query(
-           value = "select ids, id, nombre, descripcion, precio from subservicio_cat_bck where id = ?1",
+           value = "select ids, id, nombre, descripcion, precio from subservicio_cat_bck where ids = ?1",
            nativeQuery = true)
    List<ModeloSubServicio> getSubServiciosSegunServicio(Long id);
 }
