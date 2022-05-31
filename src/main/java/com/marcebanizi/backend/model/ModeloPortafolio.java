@@ -5,11 +5,9 @@ import javax.persistence.Id;
 
 @Entity
 public class ModeloPortafolio {
-
     @Id
     private long id;
     private String url;
-
     public ModeloPortafolio(){
 
     }

@@ -5,7 +5,6 @@ import java.lang.String;
 
 @Entity
 public class ModeloServicio {
-    
     @Id
     private long id;
     private String nombre;

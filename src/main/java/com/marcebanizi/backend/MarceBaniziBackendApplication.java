@@ -9,9 +9,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableJpaRepositories
 public class MarceBaniziBackendApplication extends SpringBootServletInitializer {
-
-
-
 	public static void main(String[] args) {
 		SpringApplication.run(MarceBaniziBackendApplication.class, args);
 	}

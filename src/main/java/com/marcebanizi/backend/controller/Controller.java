@@ -69,25 +69,6 @@ public class Controller {
         return ServicioRest.getImgPortafolioId(id);
     }
 
-    /*@GetMapping("/test")
-    @CrossOrigin
-    public @ResponseBody ArrayList<String> test(){
-        List<ModeloServicio> serviciosTest = ServicioRest.getServicios();
-        List<ModeloSubServicio> subserviciosTest = ServicioRest.getSubServicios();
-        System.out.println();
-        ArrayList<String> pageDataList = new ArrayList<>();
-        pageDataList.add("BackendTest - Debug Only");
-        pageDataList.add(ServicioRest.getUrlErrorMapping());
-        for (ModeloServicio i : serviciosTest){
-            pageDataList.add(i.toString());
-            
-        }
-        for (ModeloSubServicio i : subserviciosTest){
-            pageDataList.add(i.toString());
-        }
-      return pageDataList;
-    }*/
-    
     @GetMapping("/")
     @CrossOrigin
     public void method(HttpServletResponse httpServletResponse) {

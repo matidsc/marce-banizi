@@ -5,7 +5,6 @@ import javax.persistence.Id;
 
 @Entity
 public class ModeloImagenServicios {
-
     @Id
     private long idi;
     private long id;
