@@ -8,7 +8,6 @@ public class ModeloSubServicio {
 
     @Id
     private long ids;
-    private long id;
     private String nombre;
     private String descripcion;
     private long precio;
@@ -17,19 +16,19 @@ public class ModeloSubServicio {
 
     }
 
-    public ModeloSubServicio(long id, String nombre, String descripcion, long precio) {
-        this.id = id;
+    public ModeloSubServicio(long ids, String nombre, String descripcion, long precio) {
+        this.ids = ids;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
     }
 
-    public long getId() {
-        return id;
+    public long getIds() {
+        return ids;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setIds(long ids) {
+        this.ids = ids;
     }
 
     public String getNombre() {
@@ -52,14 +51,14 @@ public class ModeloSubServicio {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(long precio) {
         this.precio = precio;
     }
 
     @Override
     public String toString() {
         return "ModeloSubServicio{" +
-                "id=" + id +
+                "ids=" + ids +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", precio=" + precio +
