@@ -1,49 +1,37 @@
-import '../src/App.css'
-import NavBar from './components/navBar';
-import React, { Fragment } from 'react';
-import Footer from './components/footer'
-import Servicios from './Pages/Servicios'
-import Home from './Pages/Home'
-import Productos from './Pages/Productos'
-import Portafolio from './Pages/Portafolio';
-import ResetScroll from './components/resetScroll';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-  
-} from "react-router-dom";
-import IndividualServicio from './components/individualServicio';
+import "../src/App.css";
+import NavBar from "./components/navBar";
+import React, { Fragment } from "react";
+import Footer from "./components/footer";
+import Servicios from "./Pages/Servicios";
+import Home from "./Pages/Home";
+import Portafolio from "./Pages/Portafolio";
+import ResetScroll from "./components/resetScroll";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import IndividualServicio from "./components/individualServicio";
 
 const App = () => {
-
-
   return (
     <Router>
-      <ResetScroll/>
+      <ResetScroll />
       <NavBar />
-      <div className='App'>
-
+      <div className="App">
         <Switch>
-          <Route path='/marce-banizi/servicio/:idServicio' component={IndividualServicio} />
-          <Route path='/marce-banizi/servicios/subservicio/:idSubservicio' component={IndividualServicio} />
-          
+          <Route path="/servicio/:idServicio" component={IndividualServicio} />
+          <Route
+            path="/servicios/subservicio/:idSubservicio"
+            component={IndividualServicio}
+          />
+
           <Fragment>
-            <Route path='/marce-banizi/servicios/:idServicios' component={Servicios} />
-            <Route path='/marce-banizi/productos' component={Productos} />
-            <Route path='/marce-banizi/portafolio' component={Portafolio} />
+            <Route path="/servicios/:idServicios" component={Servicios} />
+            <Route path="/portafolio" component={Portafolio} />
 
-            <Route path='/marce-banizi' exact component={Home} />
+            <Route path="/" exact component={Home} />
             <Footer />
-
-            </Fragment>
-    
-          
-
+          </Fragment>
         </Switch>
       </div>
     </Router>
-  )
-
-}
-export default App
+  );
+};
+export default App;

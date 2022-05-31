@@ -37,11 +37,11 @@ const NavBar = () => {
           className="hamburger"
           onClick={() => dispatch(showNavBar())}
         />
-        <img  src={logo} className="logoNavBar" />
+         <Link  to={'/'}><img  src={logo} className="logoNavBar" /></Link>
         <div className="navBarLinks" id={varShow ? "show" : "hidden"}>
           <ul>
             <li onClick={() => dispatch(showNavBar())}>
-              <Link className="item" to="/marce-banizi">
+              <Link className="item" to="/">
                 Inicio
               </Link>
             </li>
@@ -56,8 +56,8 @@ const NavBar = () => {
                     <Link
                       to={
                         servicio.tieneSubServicio==="0"
-                          ? `/marce-banizi/servicio/${servicio.id}`
-                          : `/marce-banizi/servicios/${servicio.id}`
+                          ? `/servicio/${servicio.id}`
+                          : `/servicios/${servicio.id}`
                       }
                       onClick={() => {
                         dispatch(showServices());
@@ -75,7 +75,7 @@ const NavBar = () => {
               <Link
                 onClick={() => dispatch(showNavBar())}
                 className="item"
-                to="/marce-banizi/portafolio"
+                to="/portafolio"
               >
                 Portafolio
               </Link>

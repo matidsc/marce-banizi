@@ -49,8 +49,8 @@ nav{
 }
 
 .logoNavBar{
-    height: inherit;
-    margin-right: 30px;
+    height: 100%;
+    width: 100%;
 }
 .navBarLinks ul{
     display: flex;

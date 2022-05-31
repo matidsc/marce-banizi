@@ -39,7 +39,7 @@ const IndividualServicio = () => {
             ref={paragraphh}
             className={showMore ? "paragraph" : "paragraph infoHide"}
           >
-            <p>{separador(servicio.descripcion)}</p>
+            <p>{separador(typeof servicio.descripcion!=='undefined'?servicio.descripcion:"")}</p>
           </div>
           <button
             onClick={() => {

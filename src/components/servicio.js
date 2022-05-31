@@ -13,7 +13,7 @@ const Servicio = (props) => {
             <button className='btnMasInformacion'>
             <Link style={{display:'block',color:'white'}}to={
                       
-                         `/marce-banizi/servicios/subservicio/${props.id}`
+                         `/servicios/subservicio/${props.id}`
                        
 
             }>Más información</Link> </button>

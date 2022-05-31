@@ -19,7 +19,6 @@ const Servicios=()=> {
           .then((imgs) => imgs.json())
           .then((images) => setImagenes(images[0].url));
       }, [idServicios]);
-console.log(imagenes)
         return (
             
             <main id='pageWrapper'>
@@ -28,7 +27,7 @@ console.log(imagenes)
                     
                     {servicios?.map((subservicio,index) => 
                         <Servicio key={index} 
-                        id={subservicio.id}
+                        id={subservicio.ids}
                         imagen={imagenes}
                         servicio={subservicio.nombre}precio={subservicio.precio} descripcion={subservicio.descripcion}
                     />)}        

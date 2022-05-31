@@ -1,19 +1,23 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import MainTitle from '../components/mainTitle'
 import ImageGallery from '../components/imageGallery'
 
 const Portafolio = () => {
 
-    const imageList = []
-    for (var i = 0; i < 25; i++) {
-        imageList.push("" + i + ".jpg")
-    }
+    const [imagenes, setImagenes]=useState()
+    useEffect(() => {
+        fetch(`https://api.marcebaniziestudio.com/portafolio`)
+          .then((imgs) => imgs.json())
+          .then((imagenes) => setImagenes(imagenes));   
+    
+    }, [])
+    
     return (
         
         <div>
             <main className='HomeWrapper' id='pageWrapper'>
                 <MainTitle title='Portafolio'/>
-                <ImageGallery ruta="Portafolio/" imageList={imageList}/>
+                <ImageGallery imageList={imagenes}/>
             </main>
         </div>
     )
