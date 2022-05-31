@@ -1,7 +1,6 @@
 package com.marcebanizi.backend.repository;
 
-import com.marcebanizi.backend.model.ModeloImagen;
-import com.marcebanizi.backend.model.ModeloSubServicio;
+import com.marcebanizi.backend.model.ModeloImagenServicios;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -9,21 +8,21 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ModeloImgRepo extends JpaRepository<ModeloImagen, Integer> {
+public interface ModeloImgRepo extends JpaRepository<ModeloImagenServicios, Integer> {
    @Query(
            value = "select idi, id, url from img_servicio_cat_bck",
            nativeQuery = true)
-   List<ModeloImagen> getImgServicio();
+   List<ModeloImagenServicios> getImgServicio();
    @Query(
            value = "select idi, id, url from img_servicio_cat_bck where id = ?1",
            nativeQuery = true)
-   List<ModeloImagen> getImgServicioId(Long id);
+   List<ModeloImagenServicios> getImgServicioId(Long id);
    @Query(
            value = "select idi, id, url from img_subservicio_cat_bck",
            nativeQuery = true)
-   List<ModeloImagen> getImgSubServicio();
+   List<ModeloImagenServicios> getImgSubServicio();
    @Query(
            value = "select idi, id, url from img_subservicio_cat_bck where id = ?1", //revisar a futuro si es idi en el where
            nativeQuery = true)
-   List<ModeloImagen> getImgSubServicioId(Long id);
+   List<ModeloImagenServicios> getImgSubServicioId(Long id);
 }

@@ -1,14 +1,7 @@
 package com.marcebanizi.backend.service;
 
-import com.marcebanizi.backend.model.ModeloImagen;
-import com.marcebanizi.backend.model.ModeloServicio;
-import com.marcebanizi.backend.model.ModeloServicioNavbar;
-import com.marcebanizi.backend.repository.AppRepo;
-import com.marcebanizi.backend.repository.ModeloImgRepo;
-import com.marcebanizi.backend.repository.ModeloServicioNavbarRepo;
-import com.marcebanizi.backend.repository.ModeloServicioRepo;
-import com.marcebanizi.backend.model.ModeloSubServicio;
-import com.marcebanizi.backend.repository.ModeloSubServicioRepo;
+import com.marcebanizi.backend.model.*;
+import com.marcebanizi.backend.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
@@ -28,7 +21,8 @@ public class ServicioRest {
     private ModeloServicioNavbarRepo ModeloServicioNavbarRepo;
     @Autowired
     private ModeloImgRepo ModeloImgRepo;
-
+    @Autowired
+    private ModeloPortafolioRepo ModeloPortafolioRepo;
 
     public List<ModeloServicio> getServicios(){
         return ModeloServicioRepo.getServicios();
@@ -53,23 +47,31 @@ public class ServicioRest {
         return ModeloSubServicioRepo.getSubServiciosId(id);
     }
 
-    public List<ModeloImagen> getImgServicio(){
+    public List<ModeloImagenServicios> getImgServicio(){
         return ModeloImgRepo.getImgServicio();
     }
 
-    public List<ModeloImagen> getImgServicioId(Long id){
+    public List<ModeloImagenServicios> getImgServicioId(Long id){
         return ModeloImgRepo.getImgServicioId(id);
     }
 
-    public List<ModeloImagen> getImgSubServicio(){
+    public List<ModeloImagenServicios> getImgSubServicio(){
         return ModeloImgRepo.getImgSubServicio();
     }
 
-    public List<ModeloImagen> getImgSubServicioId(Long id){
+    public List<ModeloImagenServicios> getImgSubServicioId(Long id){
         return ModeloImgRepo.getImgSubServicioId(id);
     }
 
     public String getUrlErrorMapping(){
         return AppRepo.getHomeUrl();
+    }
+
+    public List<ModeloPortafolio> getAllImgPortafolio(){
+        return ModeloPortafolioRepo.getAllImgPortafolio();
+    }
+
+    public ModeloPortafolio getImgPortafolioId(Long id){
+        return ModeloPortafolioRepo.getImgPortafolio(id);
     }
 }

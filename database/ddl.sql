@@ -41,6 +41,12 @@
 			CONSTRAINT fk_img_subservicio_cat_bck_id FOREIGN KEY (id) REFERENCES subservicio_cat_bck (ids)
 		) ENGINE = InnoDB DEFAULT CHARSET = UTF8; 
 
+		CREATE TABLE img_portfolio_cat_bck (
+			id MEDIUMINT NOT NULL AUTO_INCREMENT,
+			url MEDIUMTEXT,	
+			PRIMARY KEY (id),
+		) ENGINE = InnoDB DEFAULT CHARSET = UTF8; 
+
 		CREATE TABLE app_urls (
 			id MEDIUMINT NOT NULL AUTO_INCREMENT,
 			nombre MEDIUMTEXT,

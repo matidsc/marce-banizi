@@ -1,9 +1,6 @@
 package com.marcebanizi.backend.controller;
 
-import com.marcebanizi.backend.model.ModeloImagen;
-import com.marcebanizi.backend.model.ModeloServicio;
-import com.marcebanizi.backend.model.ModeloServicioNavbar;
-import com.marcebanizi.backend.model.ModeloSubServicio;
+import com.marcebanizi.backend.model.*;
 import com.marcebanizi.backend.service.ServicioRest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -50,14 +47,26 @@ public class Controller {
 
     @GetMapping("/servicios/{id}/imagenes")
     @CrossOrigin
-    public @ResponseBody List<ModeloImagen> getImagenesPorServicios(@PathVariable Long id){
+    public @ResponseBody List<ModeloImagenServicios> getImagenesPorServicios(@PathVariable Long id){
         return ServicioRest.getImgServicioId(id);
     }
 
     @GetMapping("/servicios/subservicios/{id}/imagenes")
     @CrossOrigin
-    public @ResponseBody List<ModeloImagen> getImagenesPorSubServicios(@PathVariable Long id){
+    public @ResponseBody List<ModeloImagenServicios> getImagenesPorSubServicios(@PathVariable Long id){
         return ServicioRest.getImgSubServicioId(id);
+    }
+
+    @GetMapping("/portafolio")
+    @CrossOrigin
+    public @ResponseBody List<ModeloPortafolio> getAllImgPortafolio(){
+        return ServicioRest.getAllImgPortafolio();
+    }
+
+    @GetMapping("/portafolio/{id}")
+    @CrossOrigin
+    public @ResponseBody ModeloPortafolio getImgPortafolio(@PathVariable Long id){
+        return ServicioRest.getImgPortafolioId(id);
     }
 
     /*@GetMapping("/test")
