@@ -61,7 +61,7 @@
   height: 50%;
   background-image:linear-gradient(to top, rgba(255, 255, 255, 1), rgba(0,0,0,0));
 }
-.paragraph p {line-height: 120%;}
+.paragraph p {line-height: 120%; padding-right: 12px;}
 .infoHide {max-height: 200px; overflow: hidden;}
 .showMore {
   border-radius: 50px;

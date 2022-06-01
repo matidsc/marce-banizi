@@ -6,17 +6,21 @@ footer{
     border-radius: 20px 20px 0 0;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     row-gap: 30px;
     width: 50%;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
-}
+    align-items: center;
+    padding: 12vh 0;
+    }
 footer h2{
     margin: 0;
-    padding: 30px 0 0 30px;
     font-size: 1.5em;
+    width: 90%;
+    margin: auto;
 }
 footer h2::after{
 
@@ -30,12 +34,11 @@ footer h2::after{
 
 }
 .footerWrapper{  
-    width: 100%;
+    width: 80%;
     background-color: var(--light-bg-color);            
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
     font-size: 2em;
 
 }
@@ -46,7 +49,6 @@ footer h2::after{
     color: black;
     transition:all 1s;
     cursor: pointer;
-   
 }
 #locationIcon{
     position: relative; 
@@ -56,18 +58,20 @@ footer h2::after{
     opacity: 1;
 }   
 #locationIcon::after{
+    white-space: nowrap;
     transition: opacity 1s;
     opacity: 0; 
     content: 'Lagomar, Canelones';
     position: absolute;
     color: white;
-    background-color:red;
+    background-color:var(--accentRed);
     height: fit-content;
     width: fit-content;
     padding: 10px;
     bottom: 120%;
-    left: -30px;
     font-size: 0.4em;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .icon:hover{color: rgb(60, 60, 60);}
 
@@ -77,11 +81,15 @@ footer{
     width: 100%;
     
 }
+#locationIcon::after{
+
+    right: 0;
+}
 }
 @media screen and (min-width:500px){
     
     footer{
-        width: 60%;
+        width: 70%;
     }
 }
 /*.footerWrapper{

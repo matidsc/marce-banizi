@@ -46,9 +46,14 @@ nav{
     0px 14.3px 17.9px rgba(80,80,80, 0.042),
     0px 26.7px 33.4px rgba(80,80,80, 0.05),
     0px 64px 80px rgba(80,80,80, 0.07);
+    z-index: 3;
 }
 
 .logoNavBar{
+    height: 15vh;
+    width: 15vh;
+}
+.logoNavBar img{
     height: 100%;
     width: 100%;
 }
@@ -124,7 +129,6 @@ nav{
         -webkit-tap-highlight-color: transparent;
     }
     nav{
-        z-index: 1; 
         align-items: center;
         justify-content: space-between;
         color: wheat;
@@ -209,10 +213,13 @@ nav{
         position: fixed;
         z-index: 2;
     }
-    .logoNavBar{
-        position:absolute;
-        top:0;
-        left:50%;
-        transform: translateX(-50%);
-    }
+    
+.logoNavBar{
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    height: 12vh;
+    width: 12vh;
+}
+
 }

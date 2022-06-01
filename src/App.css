@@ -23,7 +23,7 @@
 @media screen and (min-width:768px) {
     #pageWrapper{
         margin-top: 15vh;
-        margin-bottom: 5%;
+        margin-bottom: 2.4vh;
     }
 }
 body{
@@ -32,6 +32,7 @@ body{
     box-sizing: border-box;    
 }
 .App{
+    overflow-x: hidden;
     flex-direction:column;
     align-items: center;    
     
