@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.marcebanizi</groupId>
 	<artifactId>backend</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.2</version>
 	<packaging>jar</packaging>
 	<name>Marce Banizi Backend</name>
 	<description>Marce Banizi RESTful API</description>

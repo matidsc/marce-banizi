@@ -12,7 +12,9 @@
 			nombre TEXT,
 			descripcion MEDIUMTEXT,
 			precio MEDIUMINT DEFAULT 0,
-			PRIMARY KEY (id)
+			imagenMuestra MEDIUMINT,
+			PRIMARY KEY (id),
+			CONSTRAINT fk_servicio_cat_bck_id_img FOREIGN KEY (imagenMuestra) REFERENCES img_servicio_cat_bck (idi)
 		) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4; 
 
 		CREATE TABLE subservicio_cat_bck (
@@ -21,8 +23,10 @@
 			nombre TEXT,
 			descripcion MEDIUMTEXT,
 			precio MEDIUMINT DEFAULT 0,
+			imagenMuestra MEDIUMINT,
 			PRIMARY KEY (ids, id),
-			CONSTRAINT fk_subservicio_cat_bck_id FOREIGN KEY (id) REFERENCES servicio_cat_bck (id)
+			CONSTRAINT fk_subservicio_cat_bck_id FOREIGN KEY (id) REFERENCES servicio_cat_bck (id),
+			CONSTRAINT fk_subservicio_cat_bck_id_img FOREIGN KEY (imagenMuestra) REFERENCES img_subservicio_cat_bck (idi)
 		) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4; 
 
 		CREATE TABLE img_servicio_cat_bck (

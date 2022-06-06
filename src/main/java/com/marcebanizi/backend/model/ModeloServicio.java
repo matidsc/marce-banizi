@@ -50,7 +50,7 @@ public class ModeloServicio {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(long precio) {
         this.precio = precio;
     }
 

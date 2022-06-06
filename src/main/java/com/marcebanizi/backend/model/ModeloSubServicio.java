@@ -11,16 +11,18 @@ public class ModeloSubServicio {
     private String nombre;
     private String descripcion;
     private long precio;
+    private String url;
 
     public ModeloSubServicio(){
 
     }
 
-    public ModeloSubServicio(long ids, String nombre, String descripcion, long precio) {
+    public ModeloSubServicio(long ids, String nombre, String descripcion, long precio, String url) {
         this.ids = ids;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.url = url;
     }
 
     public long getIds() {
@@ -55,6 +57,14 @@ public class ModeloSubServicio {
         this.precio = precio;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Override
     public String toString() {
         return "ModeloSubServicio{" +
@@ -62,6 +72,7 @@ public class ModeloSubServicio {
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", precio=" + precio +
+                ", url='" + url + '\'' +
                 '}';
     }
 }
