@@ -92,16 +92,3 @@ footer{
         width: 70%;
     }
 }
-/*.footerWrapper{
-    background-color: var(--dark-bg-color);
-    width: 100vw;
-    height: 100px;
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    z-index: 2;
-    justify-content: space-around;
-    align-items: center;
-}*/
-
-

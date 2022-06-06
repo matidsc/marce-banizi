@@ -3,7 +3,9 @@ import "../style/Servicio.css";
 import { Link } from "react-router-dom";
 
 const Servicio = (props) => {
+  props.imagen&&console.log(props.imagen[0]);
   return (
+    
     <div className="divServicio">
       <h1 className="titleServicio">{props.servicio}</h1>
       <img className="imgServicio" src={props.imagen} />
@@ -14,7 +16,7 @@ const Servicio = (props) => {
           to={`/servicios/subservicio/${props.id}`}
         >
           Más información
-        </Link>{" "}
+        </Link>
       </button>
     </div>
   );
