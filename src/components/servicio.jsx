@@ -3,7 +3,6 @@ import "../style/Servicio.css";
 import { Link } from "react-router-dom";
 
 const Servicio = (props) => {
-  props.imagen&&console.log(props.imagen[0]);
   return (
     
     <div className="divServicio">
