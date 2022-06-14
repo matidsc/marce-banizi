@@ -5,9 +5,11 @@ import MainTitle from "../components/mainTitle";
 import { useParams } from "react-router-dom";
 import Loading from "../components/loading";
 import PageWrapper from "../containers/pageWrapper";
+import NotFound from "./NotFound";
 const Servicios = () => {
   const [servicios, setServicios] = useState();
-
+  const [isLoading, setIsLoading] = useState(true);
+  const [itemExists, setItemExists] = useState(true);
   const { idServicios } = useParams();
 
   useEffect(() => {
@@ -16,34 +18,42 @@ const Servicios = () => {
     )
       .then((res) => res.json())
 
-      .then((result) => {
-        setServicios(result);
-
-      });
+      .then((result) =>
+        result.length === 0
+          ? setItemExists(false)
+          : (setServicios(result), 
+          setItemExists(true), 
+          setIsLoading(false))
+      );
   }, [idServicios]);
 
-  return servicios? (
+  return itemExists?(
     <PageWrapper xAnimation={true}>
       <div className="serviciosWrapper">
-        <MainTitle title={"Servicios"} />
 
-        {servicios?.map((subservicio, index) => (
+        { isLoading?<Loading/>
+        
+        :<>
+          <MainTitle title={"Servicios"} />
 
-          <Servicio
-            key={index}
-            id={subservicio.ids}
-            imagen={subservicio.url}
-            servicio={subservicio.nombre}
-            precio={subservicio.precio}
-            descripcion={subservicio.descripcion}
-          />
-          
-        ))}
+          {servicios?.map((subservicio, index) => (
+            <Servicio
+              key={index}
+              id={subservicio.ids}
+              imagen={subservicio.url}
+              servicio={subservicio.nombre}
+              precio={subservicio.precio}
+              descripcion={subservicio.descripcion}
+            />
+          ))}
+          </>
+        }
+        
+      
       </div>
     </PageWrapper>
-  ) : (
-    <Loading />
-  );
+  ):
+    <NotFound mensaje='Servicio no encontrado' boton='Volver al inicio' ruta={"/"} />
 };
 
 export default Servicios;

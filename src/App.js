@@ -8,7 +8,7 @@ import Portafolio from "./Pages/Portafolio";
 import ResetScroll from "./components/resetScroll";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import IndividualServicio from "./components/individualServicio";
-
+import NotFound from "./Pages/NotFound";
 const App = () => {
   return (
     <Router>
@@ -16,13 +16,16 @@ const App = () => {
       <NavBar />
       <div className="App">
         <Switch>
+
           <Route path="/servicio/:idServicio" component={IndividualServicio} />
           <Route
             path="/servicios/subservicio/:idSubservicio"
             component={IndividualServicio}
           />
-
+          <Route path="/notFound" component={NotFound} />
           <Fragment>
+          <Route path="/*" component={<NotFound mensaje='Ruta incorrecta' boton='Volver al inicio' ruta='/'/> } />
+
             <Route path="/servicios/:idServicios" component={Servicios} />
             <Route path="/portafolio" component={Portafolio} />
 

@@ -1,0 +1,62 @@
+.noHayItems {
+    background-color: var(--light-bg-color);
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+}
+.noHayItems h1, .noHayItems a {
+    position: absolute;
+    left: 50%;
+}
+.noHayItems h1 {
+    color: black;
+    text-align: center;
+    top: 40%;
+    transform: translate(-50%, -40%);
+}
+.noHayItems a {
+    top: 60%;
+    position: absolute;
+    transform: translate(-50%, -60%);
+    height: 10vh;
+    width: 16vw;
+}
+.noHayItems a button {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.3em;
+    font-weight: bolder;
+    border: none;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: var(--accentRed);
+}
+.noHayItems a button:hover {
+    background: var(accentRedHover);
+}
+@media screen and (max-width: 768px) {
+    .noHayItems h1, .noHayItems a {
+        position: absolute;
+        left: 50%;
+   }
+    .noHayItems h1 {
+        top: 40%;
+        transform: translate(-50%, -40%);
+        text-align: center;
+   }
+    .noHayItems a {
+        top: 60%;
+        position: absolute;
+        transform: translate(-50%, -60%);
+        height: 7vh;
+        width: 50%;
+   }
+    .noHayItems a button {
+        font-weight: 600;
+        font-size: 1.05em;
+        width: 100%;
+        height: 100%;
+   }
+
+}
