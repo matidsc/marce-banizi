@@ -24,8 +24,6 @@ const App = () => {
           />
           <Route path="/notFound" component={NotFound} />
           <Fragment>
-          <Route path="/*" component={<NotFound mensaje='Ruta incorrecta' boton='Volver al inicio' ruta='/'/> } />
-
             <Route path="/servicios/:idServicios" component={Servicios} />
             <Route path="/portafolio" component={Portafolio} />
 

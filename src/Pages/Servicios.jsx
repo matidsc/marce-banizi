@@ -26,7 +26,7 @@ const Servicios = () => {
           setIsLoading(false))
       );
   }, [idServicios]);
-
+  console.log(itemExists);
   return itemExists?(
     <PageWrapper xAnimation={true}>
       <div className="serviciosWrapper">
@@ -53,7 +53,7 @@ const Servicios = () => {
       </div>
     </PageWrapper>
   ):
-    <NotFound mensaje='Servicio no encontrado' boton='Volver al inicio' ruta={"/"} />
+    <NotFound mensaje='Servicio no encontrado' boton='Volver al inicio'ruta={"/"} />
 };
 
 export default Servicios;

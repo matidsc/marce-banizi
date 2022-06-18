@@ -5,6 +5,7 @@ const ImageGallery = (props) => {
   const childElements = props.imageList?.map((img, index) => (
     <img key={index} src={img.url}></img>
   ));
+  
   return (
     <div className="GalleryWrapper">
       <ResponsiveMasonry
