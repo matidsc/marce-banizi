@@ -96,7 +96,7 @@ const IndividualServicio = () => {
     />
   );
 };
-function separador(descripcion) {
+const separador=(descripcion)=> {
   return descripcion.split(".").join("." + "\n");
 }
 export default IndividualServicio;

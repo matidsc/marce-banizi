@@ -12,7 +12,7 @@ import NotFound from "./Pages/NotFound";
 const App = () => {
   return (
     <Router>
-      <ResetScroll />
+      <ResetScroll/>
       <NavBar />
       <div className="App">
         <Switch>

@@ -26,7 +26,6 @@ const Servicios = () => {
           setIsLoading(false))
       );
   }, [idServicios]);
-  console.log(itemExists);
   return itemExists?(
     <PageWrapper xAnimation={true}>
       <div className="serviciosWrapper">
