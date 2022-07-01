@@ -42,7 +42,7 @@ const IndividualServicio = () => {
           <Loading />
         ) : (
           <>
-            <Galeria imageList={imagenes} />
+            <Galeria alt={servicio.nombre} imageList={imagenes} />
 
             <div className="wrapperDetallesServicio">
               <h1>{servicio.nombre}</h1>

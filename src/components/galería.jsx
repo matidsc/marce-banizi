@@ -34,7 +34,7 @@ const Galeria = (props) => {
             >
               {index === actual && (
                 console.log(img.url),
-                <img key={index} className="imgMain" src={img.url} />
+                <img key={index} alt={props.alt} className="imgMain" src={img.url} />
               )}
             </div>
           );
