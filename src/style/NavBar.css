@@ -81,7 +81,7 @@ nav{
 }
 #subshow li a{
     display: block;
-    padding: 15px;
+    padding: 1em;
 }
 #subshow li a::after{
     display: none;
@@ -114,6 +114,10 @@ nav{
     }
     #subshow li{
         width: 90%;
+
+    }
+    #subshow li a {
+        padding: 0.3em;
 
     }
  

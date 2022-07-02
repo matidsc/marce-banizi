@@ -10,13 +10,13 @@
 @media screen and (min-width:700px) {
   
     .serviciosWrapper{
-        width: 70%;
+        width: 85%;
     }
   }
   @media screen and (min-width:1200px) {
   
     .serviciosWrapper{
-        width: 55%;
+        width: 60%;
     }
   }
 

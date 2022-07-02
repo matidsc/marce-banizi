@@ -21,38 +21,38 @@ const Servicios = () => {
       .then((result) =>
         result.length === 0
           ? setItemExists(false)
-          : (setServicios(result), 
-          setItemExists(true), 
-          setIsLoading(false))
+          : (setServicios(result),
+            setItemExists(true),
+            setIsLoading(false))
       );
   }, [idServicios]);
-  return itemExists?(
+  return itemExists ? (
     <PageWrapper xAnimation={true}>
       <div className="serviciosWrapper">
 
-        { isLoading?<Loading/>
-        
-        :<>
-          <MainTitle title={"Servicios"} />
+        {isLoading ? <Loading />
 
-          {servicios?.map((subservicio, index) => (
-            <Servicio
-              key={index}
-              id={subservicio.ids}
-              imagen={subservicio.url}
-              servicio={subservicio.nombre}
-              precio={subservicio.precio}
-              descripcion={subservicio.descripcion}
-            />
-          ))}
+          : <>
+            <MainTitle title={"Servicios"} />
+
+            {servicios?.map((subservicio, index) => (
+              <Servicio
+                key={index}
+                id={subservicio.ids}
+                imagen={subservicio.url}
+                servicio={subservicio.nombre}
+                precio={subservicio.precio}
+                descripcion={subservicio.descripcion}
+              />
+            ))}
           </>
         }
-        
-      
+
+
       </div>
     </PageWrapper>
-  ):
-    <NotFound mensaje='Servicio no encontrado' boton='Volver al inicio'ruta={"/"} />
+  ) :
+    <NotFound mensaje='Servicio no encontrado' boton='Volver al inicio' ruta={"/"} />
 };
 
 export default Servicios;

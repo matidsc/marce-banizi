@@ -6,7 +6,6 @@ const Galeria = (props) => {
   const [actual, setActual] = useState(0);
 
   const nextImg = () => {
-    console.log();
     setActual(actual === props.imageList.length - 1 ? 0 : actual + 1);
   };
   const prevImg = () => {
@@ -33,7 +32,6 @@ const Galeria = (props) => {
               className={index === actual ? "imgActiva" : "slide"}
             >
               {index === actual && (
-                console.log(img.url),
                 <img key={index} alt={props.alt} className="imgMain" src={img.url} />
               )}
             </div>

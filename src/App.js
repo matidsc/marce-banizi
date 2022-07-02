@@ -16,7 +16,7 @@ const App = () => {
       <NavBar />
       <div className="App">
         <Switch>
-
+            
           <Route path="/servicio/:idServicio" component={IndividualServicio} />
           <Route
             path="/servicios/subservicio/:idSubservicio"
