@@ -40,7 +40,7 @@
   width: 100vw;
   background-color: var(--accentRed);
   color: var(--light-text-color);
-  font-size: 18px;
+  font-size: 1em;
   cursor: pointer;
   pointer-events: auto; 
 }

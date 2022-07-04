@@ -1,0 +1,13 @@
+.homeCardWrapper{
+    display: grid;
+    width: 250px;
+    height: 60vh;
+    
+    grid-template-rows: 20% 60% 20%;
+    justify-items: center;
+    align-items: center;
+    
+}
+.homeCardWrapper img{
+    width: 70%;
+}   

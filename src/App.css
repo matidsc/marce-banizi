@@ -19,6 +19,7 @@
     z-index: -1;
     width: 100%;
     flex-direction: column;
+    min-height: 85vh;
 }
 @media screen and (min-width:768px) {
     #pageWrapper{
