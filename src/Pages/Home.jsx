@@ -4,6 +4,8 @@ import imgHome from "../img/ef908db4-4e22-4030-bd87-445dfadd13e1.jpeg";
 import PageWrapper from "../containers/pageWrapper";
 import HomeCard from "../components/homeCard";
 import '../style/HomeCard.css'
+import {IoIosArrowForward} from 'react-icons/io'
+import {Link} from 'react-router-dom'
 const Home = () => {
   const [img, setimg] = useState()
   useEffect(() => {
@@ -33,9 +35,13 @@ const Home = () => {
         <HomeCard  imagen={img} />
         <HomeCard imagen={img} />
         <HomeCard imagen={img} />
-        <HomeCard imagen={img} />
-        <div>
-
+        <div className="portafolioBtn">
+          <Link to='/'>
+          <div className="portafolioBtnContent">
+          <span>Ver portafolio</span>
+          <IoIosArrowForward/>
+          </div>
+          </Link>
         </div>
       </div>
       </div>

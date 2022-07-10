@@ -1,13 +1,35 @@
 .homeCardWrapper{
     display: grid;
     width: 250px;
-    height: 60vh;
-    
-    grid-template-rows: 20% 60% 20%;
+    height: 50vh;
+    grid-template-rows: 75% 25%;
     justify-items: center;
     align-items: center;
-    
+
+}
+.cardContent{
+    position: relative;
+}
+.cardContent::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(0, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    height: 100%;
+}
+.homeCardWrapper span{
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+    z-index: 3;
+    font-size: 1.2em;
 }
 .homeCardWrapper img{
-    width: 70%;
+    width: 100%;
+    height: 37.5vh;
+    border-radius: 20px;
 }   
