@@ -9,58 +9,75 @@
     justify-content: space-evenly;
     margin-top: 6vh;
     height: 75vh;
-    background: linear-gradient(to top, rgba(248, 248, 248, 0.7) 0%, rgba(248, 248, 248, 1) 100%);
+    background: linear-gradient(270deg, rgb(69, 69, 69) 0%, rgba(52, 52, 52, 0) 100%);
     border-radius: 15px;
-    padding:8%;
     max-height: 700px;
-    
+    position: relative;
+    overflow: hidden;
 }
-.btnMasInformacion{
-    align-self: center;
-
-    width: 70%;
-    min-height: 8%;
-    border: none;
-    border-radius: 25px;
-    background-color: var(--accentRed);
-    font-Size:1.1em;
-    box-shadow: rgba(255, 0, 0, 0.5) 0px 7px 29px 0px;
+.divServicio::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(0, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 75%);
+    height: 100%;
 
 }
+
 .titleServicio{
-    color: black;
-    align-items: center;
-    font-size:2em;
-    text-align: center
-    ;
-}
-a{
-    text-decoration: none;
-}
+    z-index: 0;
 
+    font-size:2em;
+    text-align: center;
+    width: 80%;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.btnServicio{
+    position: absolute;
+    bottom: 5%;
+    width: 55%;
+    z-index: 2;
+}
 .imgServicio{
     align-self: center;
-    object-fit: contain;
-    height: 70%;
+    object-fit: cover;
+    height: 100%;
     width: inherit;
 }
-@media screen and (min-width:900px) {
+@media screen and (min-width:768px) {
     
     .divServicio{
+
         display: grid;
         height: 50vh;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 65% 35%;
         grid-template-rows: 50% 50%;
         align-items: center;
         max-height: max-content;
         justify-items: center;
-
+        padding: 0 0 0 8%;
+        row-gap: 0;
+        position: static;
+    }
+    .divServicio::after{
+        display: none;
     }
     .titleServicio{
+        align-items: center;
+        position: static;
         grid-column: 1/2;
         grid-row: 1/2;
         font-size: 2em;
         text-align: left;
+        align-self: center;
+        transform: none;
     }
     .titleServicio::after{
         display: block;
@@ -72,22 +89,20 @@ a{
         height: 4px;
         background-color: var(--accentRed);
     }
+    .btnServicio{
+        width: 50%;
+        height:30%;
+        position: static;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        z-index: 0;
+    }
     .imgServicio{
         grid-column: 2/3;
         grid-row: 1/3;
-        height: 100%;
+        height: -webkit-fill-available;
     }
-    .btnMasInformacion{
-        width: 65%;
-        height: 45%;
-        max-height: 70px;
-        border: none;
-        border-radius: 25px;
-        background-color: var(--accentRed);
-        font-Size:1.1em;
-        cursor: pointer;
-        box-shadow: rgba(255, 0, 0, 0.5) 0px 7px 29px 0px;
-    }
+
     .btnMasInformacion:hover{
         background-color: var(--accentRedHover);
     }

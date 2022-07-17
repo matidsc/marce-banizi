@@ -1,22 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import PrimaryButton from './primaryButton'
 const HomeCard = ({ imagen }) => {
   return (
     <div className='homeCardWrapper'>
 
-<div className='cardContent'>
-      <span>Servicio</span>
+      <div className='cardContent'>
+        <span>Servicio</span>
 
-      <img src={imagen} alt="" />
+        <img src={imagen} alt="" />
+        <PrimaryButton className='btnHome' ruta='/' texto='Conocé más' mobileWidth='75%' desktopWidth='75%' mobileHeight='50%' desktopHeight='50%' />
+
       </div>
-      <button className="btnMasInformacion">
-        <Link
-          style={{ display: "block", color: "white" }}
-          to={`/`}
-        >
-          Conocé más
-        </Link>
-      </button>
     </div>
   )
 }
