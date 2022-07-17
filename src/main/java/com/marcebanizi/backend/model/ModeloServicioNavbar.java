@@ -1,13 +1,10 @@
 package com.marcebanizi.backend.model;
 
-import jdk.nashorn.internal.ir.annotations.Immutable;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Immutable
 @Table(name ="serviciosNavbar")
 public class ModeloServicioNavbar {
     @Id
