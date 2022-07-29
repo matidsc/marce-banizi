@@ -1,19 +1,38 @@
 import logo from "../img/logoPrincipalDark.jpeg";
 import "../style/NavBar.css";
 import { HiMenuAlt1 } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import { showServices, showNavBar } from "../redux/navState";
 import { useDispatch, useSelector } from "react-redux";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 const NavBar = () => {
   const { varShow, varShowServices } = useSelector((state) => state.navState);
   const dispatch = useDispatch();
+  const ref = useRef()
+  const {pathname} = useLocation();
 
   const [navItems, setNavItems] = useState();
 
   varShow && window.matchMedia("(max-width: 768px)").matches
     ? (document.body.style.overflowY = "hidden")
     : (document.body.style.overflowY = "auto");
+
+  useEffect(() => {
+
+    const checkIfClickedOutside = e => {
+      if(e.path[0]!==ref.current){
+        dispatch(showServices())
+      }
+
+    }
+    document.body.addEventListener('click',checkIfClickedOutside)
+    return()=>document.body.removeEventListener('click',checkIfClickedOutside)
+  }, [varShowServices])
+useEffect(() => {
+console.log(pathname)
+  if(!varShowServices){dispatch(showServices())}
+
+}, [pathname])
 
   useEffect(() => {
     fetch("https://api.marcebaniziestudio.com/serviciosnavbar")
@@ -45,7 +64,7 @@ const NavBar = () => {
             </li>
 
             <div>
-              <li className="item" onClick={() => dispatch(showServices())}>
+              <li ref={ref} className="item" onClick={() => dispatch(showServices())}>
                 Servicios
               </li>
               <ul id={varShowServices ? "subshow" : "subhidden"}>
@@ -87,6 +106,7 @@ const NavBar = () => {
         style={{
           display: varShow ? "block" : "none",
         }}
+        onClick={() => dispatch(showNavBar())}
       ></div>
     </>
   );

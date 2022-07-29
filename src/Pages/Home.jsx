@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../style/Home.css";
-import imgHome from "../img/ef908db4-4e22-4030-bd87-445dfadd13e1.jpeg";
 import PageWrapper from "../containers/pageWrapper";
 import HomeCard from "../components/homeCard";
 import '../style/HomeCard.css'
@@ -8,7 +7,10 @@ import { IoIosArrowForward } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 const Home = () => {
   const [img, setimg] = useState()
-  useEffect(() => {
+  const [servicioHome,setServicioHome]=useState()
+  const [imagesHome,setImagesHome]=useState()
+
+    useEffect(() => {
 
     fetch(
       `https://api.marcebaniziestudio.com/servicios/subservicios/4/imagenes`
@@ -36,7 +38,7 @@ const Home = () => {
           <HomeCard imagen={img} />
           <HomeCard imagen={img} />
           <div className="portafolioBtn">
-            <Link to='/'>
+            <Link to='/portafolio'>
               <div className="portafolioBtnContent">
                 <span>Ver portafolio</span>
                 <IoIosArrowForward />

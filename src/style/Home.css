@@ -32,8 +32,6 @@
 }
 .textoHome h2{
     animation: textSlide 1.5s ease-in-out,textFade 2s ease-in-out;
-
-
 }
 .serviciosHome{
     display: flex;
@@ -48,11 +46,9 @@
 .serviciosHome .portafolioBtn{
 
     height: 37.5vh;
-    align-self: baseline;
     background-color: red;
     width: 210px;
-    border-radius: 20px;
-        
+    border-radius: 20px;  
     font-size: 1.2em;
     position: relative;
 }
@@ -101,6 +97,9 @@
     .imgHome{
       
         width: 70vw;
+ }
+ .textoHome{
+        text-align: center;
  }
  
 }

@@ -154,7 +154,7 @@ nav{
         border-bottom-left-radius: 20px;    
         border-bottom-right-radius: 20px;  
         color: white;
-        z-index: 10;
+        z-index: 3;
    }
   
    .navBarLinks{

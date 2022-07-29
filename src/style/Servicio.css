@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
 
-.divServicio{
+.divServicio {
     row-gap: 2.4vh;
     display: flex;
     flex-direction: column;
@@ -15,45 +15,58 @@
     position: relative;
     overflow: hidden;
 }
-.divServicio::after{
+
+.divServicio::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(0, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 75%);
+    background: linear-gradient(0, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
     height: 100%;
 
 }
 
-.titleServicio{
+.wrapperServicio {
+    position: absolute;
+    z-index: 1;
+    bottom: 3%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 20%;
+    bottom: 5%;
+    row-gap: 5vh;
+    justify-content: space-between;
+}
+
+.titleServicio {
     z-index: 0;
 
-    font-size:2em;
+    font-size: 2em;
     text-align: center;
     width: 80%;
     color: white;
-    position: absolute;
-    left: 50%;
-    top: 70%;
-    transform: translateX(-50%);
     z-index: 2;
 }
-.btnServicio{
-    position: absolute;
-    bottom: 5%;
+
+.btnServicio {
     width: 55%;
     z-index: 2;
+    height: 5vh;
 }
-.imgServicio{
+
+.imgServicio {
     align-self: center;
     object-fit: cover;
     height: 100%;
     width: inherit;
 }
+
 @media screen and (min-width:768px) {
-    
-    .divServicio{
+
+    .divServicio {
 
         display: grid;
         height: 50vh;
@@ -66,20 +79,30 @@
         row-gap: 0;
         position: static;
     }
-    .divServicio::after{
+
+    .divServicio::after {
         display: none;
     }
-    .titleServicio{
-        align-items: center;
+
+    .wrapperServicio {
         position: static;
         grid-column: 1/2;
-        grid-row: 1/2;
+        grid-row: 1/3;
+        height: 100%;
+        justify-content: space-around;
+    }
+
+    .titleServicio {
+        align-items: center;
+        position: static;
+
         font-size: 2em;
         text-align: left;
         align-self: center;
         transform: none;
     }
-    .titleServicio::after{
+
+    .titleServicio::after {
         display: block;
         position: relative;
         bottom: -20px;
@@ -89,21 +112,23 @@
         height: 4px;
         background-color: var(--accentRed);
     }
-    .btnServicio{
+
+    .btnServicio {
         width: 50%;
-        height:30%;
+        height: 12%;
         position: static;
         grid-column: 1/2;
         grid-row: 2/3;
         z-index: 0;
     }
-    .imgServicio{
+
+    .imgServicio {
         grid-column: 2/3;
         grid-row: 1/3;
         height: -webkit-fill-available;
     }
 
-    .btnMasInformacion:hover{
+    .btnMasInformacion:hover {
         background-color: var(--accentRedHover);
     }
 }
