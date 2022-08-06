@@ -5,24 +5,44 @@ import HomeCard from "../components/homeCard";
 import '../style/HomeCard.css'
 import { IoIosArrowForward } from 'react-icons/io'
 import { Link } from 'react-router-dom'
+import imagen from '../img/imgPrueba.jpeg'
 const Home = () => {
-  const [img, setimg] = useState()
-  const [servicioHome,setServicioHome]=useState()
-  const [imagesHome,setImagesHome]=useState()
+  const [serviciosHome, setServiciosHome] = useState()
+  const [imagesHome, setImagesHome] = useState()
 
-    useEffect(() => {
+  useEffect(() => {
 
-    fetch(
-      `https://api.marcebaniziestudio.com/servicios/subservicios/4/imagenes`
-    )
-      .then((res) => res.json())
+    Promise.all([fetch(
+      `https://api.marcebaniziestudio.com/servicios/subservicios/5`
+    ).then((res) => res.json())
+      , fetch(
+        `https://api.marcebaniziestudio.com/servicios/5`
+      ).then((res) => res.json())
+      , fetch(
+        `https://api.marcebaniziestudio.com/servicios/4`
+      ).then((res) => res.json())
+    ])
+      .then((result) => {
 
-      .then((result) =>
-        setimg(result[0].url)
+        setServiciosHome(result)
+      }
 
       );
 
-
+    Promise.all([fetch(
+      `https://api.marcebaniziestudio.com/servicios/subservicios/5/imagenes`
+    ).then((res) => res.json())
+      , fetch(
+        `https://api.marcebaniziestudio.com/servicios/5/imagenes`
+      ).then((res) => res.json())
+      , fetch(
+        `https://api.marcebaniziestudio.com/servicios/4/imagenes`
+      ).then((res) => res.json())
+    ])
+      .then((result) => {
+        setImagesHome(result)
+      }
+      );
   }, [])
 
   return (
@@ -30,18 +50,25 @@ const Home = () => {
       <div className="homePageWrapper">
         <div className="textoHome">
           <h1>Marce Banizi Estudio</h1>
-          <h2>Estudio de belleza texto texto texto</h2>
+          <h2>Servicios destacados</h2>
         </div>
         <div className="serviciosHome">
+          {
+            serviciosHome?.map((servicio, index) => (
 
-          <HomeCard imagen={img} />
-          <HomeCard imagen={img} />
-          <HomeCard imagen={img} />
+              <HomeCard ruta={'/'} titulo={servicio.nombre} imagen={typeof imagesHome !== 'undefined' && imagesHome[index][index===0?2:0].url} />
+
+            ))
+          }
+
           <div className="portafolioBtn">
             <Link to='/portafolio'>
-              <div className="portafolioBtnContent">
-                <span>Ver portafolio</span>
-                <IoIosArrowForward />
+              <div className="cardContent">
+                <span id='portafolioSpan'>
+                  Ver portafolio 
+                  <IoIosArrowForward />
+                </span>
+                <img src={imagen} />
               </div>
             </Link>
           </div>

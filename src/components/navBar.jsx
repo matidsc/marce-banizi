@@ -1,7 +1,7 @@
 import logo from "../img/logoPrincipalDark.jpeg";
 import "../style/NavBar.css";
 import { HiMenuAlt1 } from "react-icons/hi";
-import { Link,useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { showServices, showNavBar } from "../redux/navState";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState, useRef } from "react";
@@ -9,7 +9,7 @@ const NavBar = () => {
   const { varShow, varShowServices } = useSelector((state) => state.navState);
   const dispatch = useDispatch();
   const ref = useRef()
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
   const [navItems, setNavItems] = useState();
 
@@ -18,21 +18,22 @@ const NavBar = () => {
     : (document.body.style.overflowY = "auto");
 
   useEffect(() => {
+    console.log(varShowServices);
 
     const checkIfClickedOutside = e => {
-      if(e.path[0]!==ref.current){
+      if (e.path[0] !== ref.current && varShowServices) {
         dispatch(showServices())
       }
 
     }
-    document.body.addEventListener('click',checkIfClickedOutside)
-    return()=>document.body.removeEventListener('click',checkIfClickedOutside)
+    document.body.addEventListener('click', checkIfClickedOutside)
+    return () => document.body.removeEventListener('click', checkIfClickedOutside)
   }, [varShowServices])
-useEffect(() => {
-console.log(pathname)
-  if(!varShowServices){dispatch(showServices())}
 
-}, [pathname])
+  useEffect(() => {
+    if (varShowServices) { dispatch(showServices()) }
+    console.log(pathname);
+  }, [pathname])
 
   useEffect(() => {
     fetch("https://api.marcebaniziestudio.com/serviciosnavbar")
@@ -69,6 +70,8 @@ console.log(pathname)
               </li>
               <ul id={varShowServices ? "subshow" : "subhidden"}>
                 {navItems?.map((servicio) => (
+                  console.log(servicio),
+
                   <li key={servicio.id}>
                     <Link
                       to={

@@ -1,10 +1,12 @@
-.homePageWrapper{
+.homePageWrapper {
     display: flex;
     flex-direction: column;
-    min-height:85vh;
-    justify-content: space-evenly;
+    min-height: 85vh;
+    justify-content: flex-start;
+    align-items: center;
 }
-.textoHome{
+
+.textoHome {
 
     display: flex;
     flex-direction: column;
@@ -13,13 +15,15 @@
     align-items: center;
 
 }
-.textoHome h1{
+
+.textoHome h1 {
     font-size: 2.5em;
-    animation: textSlide 1s ease-in-out,textFade 2s ease-in-out;
+    animation: textSlide 1s ease-in-out, textFade 2s ease-in-out;
     position: relative;
     z-index: 1;
 }
-.textoHome h1::after{
+
+.textoHome h1::after {
 
     position: absolute;
     content: '';
@@ -30,81 +34,110 @@
     height: 30%;
     background-color: var(--accentRed);
 }
-.textoHome h2{
-    animation: textSlide 1.5s ease-in-out,textFade 2s ease-in-out;
+
+.textoHome h2 {
+    animation: textSlide 1.5s ease-in-out, textFade 2s ease-in-out;
 }
-.serviciosHome{
+
+.serviciosHome {
     display: flex;
     flex-wrap: wrap;
     width: 100vw;
     justify-content: center;
     align-items: center;
     column-gap: 2vw;
-    row-gap: 5vw;
-    
-}
-.serviciosHome .portafolioBtn{
+    row-gap: 6vh;
 
-    height: 37.5vh;
-    background-color: red;
-    width: 210px;
-    border-radius: 20px;  
+}
+
+.serviciosHome .portafolioBtn {
+
+    width: 230px;
+    border-radius: 20px;
     font-size: 1.2em;
     position: relative;
 }
-.serviciosHome .portafolioBtn a{
+
+#portafolioSpan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 15%;
+    height: 10%;
+    top: unset;
+}
+
+.serviciosHome .portafolioBtn a {
     width: 100%;
     height: 100%;
     display: block;
     color: white;
 }
-.serviciosHome .portafolioBtnContent{
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-}
-@keyframes textFade{
-0%{
-    opacity: 0;
 
+
+@keyframes textFade {
+    0% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
-100%{
-    opacity: 1;
-}
-}
-@keyframes textSlide{
+
+@keyframes textSlide {
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(0);
     }
 }
-.imgHome{
-    width: 55%;
-    margin-bottom: -5%;
-    border-radius: 0 0 20px 20px;
-    z-index: 1;
- 
+
+@media screen and (max-width:1000px) {
+.homePageWrapper{
+    margin-bottom: 2.7vh;
+}
+    .serviciosHome {
+
+        width: 70%;
+    }
+
+    .serviciosHome .portafolioBtn {
+        flex-basis: 40%;
+    }
+
 }
 
-@media screen and (max-width:765px){
-        
-    .imgHome{
-      
-        width: 70vw;
- }
- .textoHome{
+@media screen and (max-width:765px) {
+
+    .serviciosHome {
+
+        width: 80%;
+        row-gap: 12vh;
+    }
+
+    .serviciosHome .portafolioBtn {
+        flex-basis: 100%;
+        height: 75vh;
+    }
+
+
+    .textoHome {
         text-align: center;
- }
- 
+    }
+
 }
-@media screen and (max-width:500px){
-    .imgHome{
-        width: 100vw;
+
+@media screen and (max-width:500px) {
+    .textoHome h1 {
+        text-align: center;
+        font-size: 2em;
+    }
+    .textoHome h1::after{
+        width: 110%;
+        left: -5%;
     }
 }
