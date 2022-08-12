@@ -9,7 +9,7 @@ import imagen from '../img/imgPrueba.jpeg'
 const Home = () => {
   const [serviciosHome, setServiciosHome] = useState()
   const [imagesHome, setImagesHome] = useState()
-
+  
   useEffect(() => {
 
     Promise.all([fetch(
@@ -56,7 +56,7 @@ const Home = () => {
           {
             serviciosHome?.map((servicio, index) => (
 
-              <HomeCard ruta={'/'} titulo={servicio.nombre} imagen={typeof imagesHome !== 'undefined' && imagesHome[index][index===0?2:0].url} />
+              <HomeCard key={index} ruta={'/'} titulo={servicio.nombre} imagen={typeof imagesHome !== 'undefined' ? imagesHome[index][index===0?2:0].url:undefined} />
 
             ))
           }

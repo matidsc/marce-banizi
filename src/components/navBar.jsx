@@ -18,7 +18,6 @@ const NavBar = () => {
     : (document.body.style.overflowY = "auto");
 
   useEffect(() => {
-    console.log(varShowServices);
 
     const checkIfClickedOutside = e => {
       if (e.path[0] !== ref.current && varShowServices) {
@@ -30,8 +29,12 @@ const NavBar = () => {
     return () => document.body.removeEventListener('click', checkIfClickedOutside)
   }, [varShowServices])
 
-  useEffect(() => {
-    if (varShowServices) { dispatch(showServices()) }
+  useEffect(() => { 
+    console.log(varShowServices);
+    if (!varShowServices) {
+      dispatch(showServices())
+    }
+
     console.log(pathname);
   }, [pathname])
 
