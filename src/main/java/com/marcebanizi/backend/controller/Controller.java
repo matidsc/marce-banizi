@@ -75,11 +75,4 @@ public class Controller {
         httpServletResponse.setHeader("Location", ServicioRest.getUrlErrorMapping());
         httpServletResponse.setStatus(302);
     }
-
-    @GetMapping("/")
-    @CrossOrigin
-    public void method(HttpServletResponse httpServletResponse) {
-        httpServletResponse.setHeader("Location", ServicioRest.getUrlErrorMapping());
-        httpServletResponse.setStatus(302);
-    }
 }
