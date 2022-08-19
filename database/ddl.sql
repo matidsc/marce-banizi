@@ -58,18 +58,13 @@
 			PRIMARY KEY (id)
 		) ENGINE = InnoDB DEFAULT CHARSET = UTF8; 
 
-		CREATE TABLE home_services_cat_bck (
-			ids MEDIUMINT NOT NULL AUTO_INCREMENT,
+		CREATE TABLE home_services (
+			idhs MEDIUMINT NOT NULL AUTO_INCREMENT,
 			id MEDIUMINT,
-			PRIMARY KEY (ids, id),
-			CONSTRAINT fk_home_services_cat_bck_id FOREIGN KEY (id) REFERENCES servicio_cat_bck (id)
-		) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4; 
-
-		CREATE TABLE home_subservices_cat_bck (
-			ids MEDIUMINT NOT NULL AUTO_INCREMENT,
-			id MEDIUMINT,
-			PRIMARY KEY (ids, id),
-			CONSTRAINT fk_home_subservices_cat_bck_id FOREIGN KEY (id) REFERENCES subservicio_cat_bck (ids)
+            ids MEDIUMINT,
+			PRIMARY KEY (idhs),
+			CONSTRAINT fk_home_servicio_cat_bck_id FOREIGN KEY (id) REFERENCES servicio_cat_bck (id),
+            CONSTRAINT fk_home_subservicio_cat_bck_id FOREIGN KEY (ids) REFERENCES subservicio_cat_bck (ids)
 		) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4; 
     /* Fin de tablas */
 	/* Creación de vistas */

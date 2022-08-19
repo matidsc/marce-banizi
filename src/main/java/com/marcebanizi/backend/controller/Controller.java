@@ -69,6 +69,12 @@ public class Controller {
         return ServicioRest.getImgPortafolioId(id);
     }
 
+    @GetMapping("/home/destacados")
+    @CrossOrigin
+    public @ResponseBody List<Object> getHomeFeaturedServices(){
+        return ServicioRest.getHomeFeaturedServices();
+    }
+
     @GetMapping("/")
     @CrossOrigin
     public void method(HttpServletResponse httpServletResponse) {

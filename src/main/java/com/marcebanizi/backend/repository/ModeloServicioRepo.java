@@ -15,4 +15,8 @@ public interface ModeloServicioRepo extends JpaRepository<ModeloServicio, Intege
            value="select id, nombre, descripcion, precio from servicio_cat_bck where id = ?1",
            nativeQuery = true)
    ModeloServicio getServiciosId(Long id);
+
+   @Query(
+          value="(SELECT idhs, home_services.id, home_services.ids, servicio_cat_bck.nombre, 'f' AS esSubservicio FROM home_services JOIN servicio_cat_bck ON home_services.id=servicio_cat_bck.id) UNION (SELECT idhs, home_services.id, home_services.ids, subservicio_cat_bck.nombre, 't' AS esSubservicio FROM home_services JOIN subservicio_cat_bck ON home_services.ids=subservicio_cat_bck.ids) ORDER BY idhs", nativeQuery = true)
+   List<Object> getHomeFeaturedServices();
 }

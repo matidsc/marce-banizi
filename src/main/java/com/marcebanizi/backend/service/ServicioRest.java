@@ -74,4 +74,8 @@ public class ServicioRest {
     public ModeloPortafolio getImgPortafolioId(Long id){
         return ModeloPortafolioRepo.getImgPortafolio(id);
     }
+
+    public List<Object> getHomeFeaturedServices(){
+        return ModeloServicioRepo.getHomeFeaturedServices();
+    }
 }
