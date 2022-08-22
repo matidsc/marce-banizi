@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import imagen from '../img/imgPrueba.jpeg'
 const Home = () => {
   const [serviciosHome, setServiciosHome] = useState()
-  const [imagesHome, setImagesHome] = useState()
+  const [imagesHome, setImagesHome] = useState([])
 
   useEffect(() => {
 
@@ -17,24 +17,28 @@ const Home = () => {
     ).then((res) => res.json())
       .then((result) => {
         setServiciosHome(result)
-      }
 
-      );
+        result.map(servicio => {
+           servicio[4] === 'f'
+            ? fetch(`https://api.marcebaniziestudio.com/servicios/${servicio[1]}/imagenes`)
+              .then((res) => res.json())
+              .then((result) => {
+                console.log('imagen F', result);
+    
+                setImagesHome(imagen=>[...imagen, result])
+              })
+    
+            : fetch(`https://api.marcebaniziestudio.com/servicios/subservicios/${servicio[2]}/imagenes`
+            ).then((res) => res.json())
+              .then((result) => {
+                console.log('imagen T',result);
+                setImagesHome(imagen=>[...imagen, result])
+              })
+    
+        })
+      })
+      console.log(imagesHome);
 
-    Promise.all([fetch(
-      `https://api.marcebaniziestudio.com/servicios/subservicios/5/imagenes`
-    ).then((res) => res.json())
-      , fetch(
-        `https://api.marcebaniziestudio.com/servicios/5/imagenes`
-      ).then((res) => res.json())
-      , fetch(
-        `https://api.marcebaniziestudio.com/servicios/4/imagenes`
-      ).then((res) => res.json())
-    ])
-      .then((result) => {
-        setImagesHome(result)
-      }
-      );
   }, [])
 
   return (
@@ -48,17 +52,17 @@ const Home = () => {
           {
             serviciosHome?.map((servicio, index) => (
 
-              <HomeCard 
-              key={index} 
-              ruta={servicio[4] === 'f' 
-              ? `/servicio/${servicio[1]}` 
-              : `/servicios/subservicio/${servicio[2]}`} 
+              <HomeCard
+                key={index}
+                ruta={servicio[4] === 'f'
+                  ? `/servicio/${servicio[1]}`
+                  : `/servicios/subservicio/${servicio[2]}`}
 
-              titulo={servicio[3]} 
+                titulo={servicio[3]}
 
-              imagen={typeof imagesHome !== 'undefined' 
-              ? imagesHome[index][index === 0 ? 2 : 0].url 
-              : undefined} />
+                imagen={typeof imagesHome !== 'undefined'
+                  ? imagesHome[index][index === 0 ? 2 : 0].url
+                  : undefined} />
 
             ))
           }

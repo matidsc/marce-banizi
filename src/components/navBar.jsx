@@ -20,7 +20,6 @@ const NavBar = () => {
   useEffect(() => {
 
     const checkIfClickedOutside = e => {
-      console.log(e.path[0], "ref:", ref.current);
       
       if (e.path[0] !== ref.current && varShowServices) {
         dispatch(showServices())

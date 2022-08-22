@@ -78,10 +78,7 @@
   cursor: pointer;
 }
 .showMore:focus {outline: none;}
-/*@font-face {
-    font-family: Agrandir;
-    src: url("../fonts/Agrandir-Regular.otf") format("opentype");
-}*/
+
 @media screen and (min-width:768px) {
 
   .wrapperIndividualServicio {
