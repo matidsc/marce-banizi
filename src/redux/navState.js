@@ -9,16 +9,10 @@ export const navBarSlice = createSlice({
   },
   reducers: {
     showNavBar: (state) => {state.varShow =! state.varShow},
-    showServices:(state)=>{state.varShowServices =! state.varShowServices}
-    /*showProductos:(state)=>{state.varShowProductos=!state.varShowProductos}*/
+    showServices:(state)=> {state.varShowServices =! state.varShowServices;console.log(state.varShowServices);}
   }
 })
 
-// Action creators are generated for each case reducer function
 export const {showNavBar, showProductos,showServices} = navBarSlice.actions
 
 export default navBarSlice.reducer
-
-/* incrementByAmount: (state, action) => {
-      state.value += action.payload
-    }, */

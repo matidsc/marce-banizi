@@ -9,21 +9,13 @@ import imagen from '../img/imgPrueba.jpeg'
 const Home = () => {
   const [serviciosHome, setServiciosHome] = useState()
   const [imagesHome, setImagesHome] = useState()
-  
+
   useEffect(() => {
 
-    Promise.all([fetch(
-      `https://api.marcebaniziestudio.com/servicios/subservicios/5`
+    fetch(
+      `https://api.marcebaniziestudio.com/home/destacados`
     ).then((res) => res.json())
-      , fetch(
-        `https://api.marcebaniziestudio.com/servicios/5`
-      ).then((res) => res.json())
-      , fetch(
-        `https://api.marcebaniziestudio.com/servicios/4`
-      ).then((res) => res.json())
-    ])
       .then((result) => {
-
         setServiciosHome(result)
       }
 
@@ -56,7 +48,17 @@ const Home = () => {
           {
             serviciosHome?.map((servicio, index) => (
 
-              <HomeCard key={index} ruta={'/'} titulo={servicio.nombre} imagen={typeof imagesHome !== 'undefined' ? imagesHome[index][index===0?2:0].url:undefined} />
+              <HomeCard 
+              key={index} 
+              ruta={servicio[4] === 'f' 
+              ? `/servicio/${servicio[1]}` 
+              : `/servicios/subservicio/${servicio[2]}`} 
+
+              titulo={servicio[3]} 
+
+              imagen={typeof imagesHome !== 'undefined' 
+              ? imagesHome[index][index === 0 ? 2 : 0].url 
+              : undefined} />
 
             ))
           }
@@ -65,7 +67,7 @@ const Home = () => {
             <Link to='/portafolio'>
               <div className="cardContent">
                 <span id='portafolioSpan'>
-                  Ver portafolio 
+                  Ver portafolio
                   <IoIosArrowForward />
                 </span>
                 <img src={imagen} />

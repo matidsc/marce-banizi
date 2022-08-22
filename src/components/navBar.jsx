@@ -20,6 +20,8 @@ const NavBar = () => {
   useEffect(() => {
 
     const checkIfClickedOutside = e => {
+      console.log(e.path[0], "ref:", ref.current);
+      
       if (e.path[0] !== ref.current && varShowServices) {
         dispatch(showServices())
       }
@@ -29,15 +31,8 @@ const NavBar = () => {
     return () => document.body.removeEventListener('click', checkIfClickedOutside)
   }, [varShowServices])
 
-  useEffect(() => { 
-    console.log(varShowServices);
-    if (!varShowServices) {
-      dispatch(showServices())
-    }
 
-    console.log(pathname);
-  }, [pathname])
-
+  
   useEffect(() => {
     fetch("https://api.marcebaniziestudio.com/serviciosnavbar")
       .then((res) => res.json())
@@ -68,12 +63,11 @@ const NavBar = () => {
             </li>
 
             <div>
-              <li ref={ref} className="item" onClick={() => dispatch(showServices())}>
+              <li ref={ref} className="item" onClick={() => { dispatch(showServices()); }}>
                 Servicios
               </li>
               <ul id={varShowServices ? "subshow" : "subhidden"}>
                 {navItems?.map((servicio) => (
-                  console.log(servicio),
 
                   <li key={servicio.id}>
                     <Link
@@ -83,8 +77,8 @@ const NavBar = () => {
                           : `/servicios/${servicio.id}`
                       }
                       onClick={() => {
-                        dispatch(showServices());
                         dispatch(showNavBar());
+
                       }}
                     >
                       {servicio.nombre}

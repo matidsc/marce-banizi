@@ -11,7 +11,6 @@
 #pageWrapper{
     display: flex;
     align-items: center;
-    justify-content: center;
     margin-top:12vh;
     background-color: var(--dark-bg-color);
     color: white; 
@@ -24,7 +23,6 @@
 @media screen and (min-width:768px) {
     #pageWrapper{
         margin-top: 15vh;
-        margin-bottom: 2.4vh;
     }
 }
 body{

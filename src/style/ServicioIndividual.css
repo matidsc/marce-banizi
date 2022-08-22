@@ -89,10 +89,10 @@
     width:75%;
     flex-direction: row;
     align-items: center;
-    height: calc(81vh - 65px);
+    height: calc(80vh - 65px);
+    margin-top: 2.5vh;
     border-radius: 5px;
     overflow: hidden;
-    margin-top: 2vh;
   }
   .wrapperDetallesServicio {
     width: 60%;
